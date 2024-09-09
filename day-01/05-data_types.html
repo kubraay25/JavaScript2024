@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data_Types</title>
+  </head>
+  <body>
+    <script>
+      //String: bütün degiskenler "" icerisine yazarsak String kabul edilir
+      //Number: tirnak kullanilmadan yazilan sayiları ifade eder
+      //BigInt: daha buyuk sayilari saklamaj icin kullanilir (var x = 100n;)(Decimal:ondalikli sayilardir)
+      //Boolean: tirnak icine alinmadan yazilirlar, true ve false dondururler
+      //Symbol: benzersiz deger uretmek icin kullanilir (var id = Symbol)
+      //Object:
+      //Undefined: bir degisken tanimlayip icine deger atanmamistir,degersizdir bu durumu ifade eder
+      //Null: bosluk, degersizlik degeri atanmistir
+
+      /*
+        String,Number,BigInt,Boolean,Symbol,Undefined,Null bunlar ilkel yapidadirlar primitive
+        Object non primitive dir gelismis yapidadir
+        */
+
+      /*
+        null ile undefined arasindaki en temel fark; undefined tanimlanip atanmayan degerdir,yani henuz bir deger 
+        atanmamistir,null ise bilincli bir sekilde deger dondurulmemesidir
+        undefined,Bir değişken tanımlanır ama değer atanmazsa,Bir fonksiyon bir değer döndürmezse,
+        undefined,Bir nesne veya dizi içinde tanımlı olmayan bir özelliğe erişilmeye çalışıldığında undefined olur.... 
+        undefined: JavaScript motoru tarafından atanır ve bir değişken tanımlanmış fakat henüz bir değer atanmadığı zaman kullanılır.
+        null: Geliştirici tarafından atanır ve bilinçli olarak "boş" veya "geçersiz" bir değeri belirtir.
+        */
+
+      //Typeof methodu tanimlanan degiskenin tipini veya data type'ini gosterir kullanimlari asagidaki gibidir
+
+      let name = "kubra";
+      console.log(name, typeof name); //string
+
+      let salary = 123;
+      console.log(salary, typeof salary); //number
+
+      let salaryTwo = "123";
+      console.log(salaryTwo, typeof salaryTwo); //string
+
+      let age;
+      console.log(age, typeof age); //undefined
+
+      // "is" ifadesi genelde true ve false döndürümlerinde degisken ismi olarak yazilir
+
+      let isRetired = true;
+      console.log(isRetired, typeof isRetired); //boolean
+    </script>
+  </body>
+</html>
