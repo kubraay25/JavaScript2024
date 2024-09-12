@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atama Operatorleri</title>
+</head>
+<body>
+    <script>
+        //Aritmetik operatorler
+        //Karsilastirma operatorleri
+        //Mantiksal operatorler
+        //Atama operatorleri
+
+
+        //Aritmatik operatorlere ornekler
+        const num1 = 21;
+        const num2 = 25;
+        const num3 = 4;
+
+       let result = num1 + 3;  //burada const tipini yazsaydık hata alirdik cunku surekli degeri degisecekti
+        console.log(result);
+
+        result = num2**num3;   //her atama işlemi önceki result degerini yok eder
+        console.log(result);   
+
+        result = num1/num3
+        console.log(result);
+
+        result = num2%num3;
+        console.log(result);
+
+        result++;
+        console.log(result);  //burada yukarda result ile yapmıs oldugumuz işlemlerde en sonki result degeri esas alınır
+
+        result = result + 1   //yukardaki iafde ile aynı
+        console.log(result);
+
+        result--;
+        console.log(result);
+
+        result = result-1;
+        console.log(result);
+    </script>
+</body>
+</html>

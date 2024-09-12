@@ -12,6 +12,7 @@
       //BigInt: daha buyuk sayilari saklamaj icin kullanilir (var x = 100n;)(Decimal:ondalikli sayilardir)
       //Boolean: tirnak icine alinmadan yazilirlar, true ve false dondururler
       //Symbol: benzersiz deger uretmek icin kullanilir (var id = Symbol)
+      //isNaN: Not a number, bir deger sayi degilse bize true ya da false dondurur
       //Object:
       //Undefined: bir degisken tanimlayip icine deger atanmamistir,degersizdir bu durumu ifade eder
       //Null: bosluk, degersizlik degeri atanmistir
@@ -33,21 +34,22 @@
       //Typeof methodu tanimlanan degiskenin tipini veya data type'ini gosterir kullanimlari asagidaki gibidir
 
       let name = "kubra";
-      console.log(name, typeof name); //string
+      console.log(name, typeof(name), isNaN(name)); //string
 
       let salary = 123;
-      console.log(salary, typeof salary); //number
+      console.log(salary, typeof salary, isNaN(salary)); //number
 
       let salaryTwo = "123";
-      console.log(salaryTwo, typeof salaryTwo); //string
+      console.log(salaryTwo, typeof salaryTwo, isNaN(salaryTwo)); //string
+      
 
       let age;
-      console.log(age, typeof age); //undefined
+      console.log(age, typeof age, isNaN(age)); //undefined
 
       // "is" ifadesi genelde true ve false döndürümlerinde degisken ismi olarak yazilir
 
       let isRetired = true;
-      console.log(isRetired, typeof isRetired); //boolean
+      console.log(isRetired, typeof isRetired, isNaN(isRetired)); //boolean
     </script>
   </body>
 </html>
