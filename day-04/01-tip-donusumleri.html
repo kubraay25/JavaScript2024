@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Donusumleri</title>
+</head>
+<body>
+    <script>
+
+        /*
+        Casting (veya type casting), bir programlama dilinde bir veri türünü başka bir veri türüne dönüştürme işlemidir. 
+        Örneğin, bir sayıyı (integer) bir string'e veya bir string'i bir sayıya dönüştürmek gibi işlemleri ifade eder.
+        */
+
+        //stringli bir ifadeyi sayiya cevirmek istiyorsak Number() methodu kullanilir
+        const many = "100";
+        console.log(many+15); //10015
+        console.log(Number(many)+15); //115
+
+        const yas = prompt("yasinizi giriniz"); //burada en önemli bilinmesi gereken olay promptun sayi olarak girilse dahi string döndürmesidir
+        console.log(yas,typeof(yas));
+
+        const result = yas + 2; //yas'in tipi stringtir bu unutulmamalidir
+        console.log(result);
+
+        // result = Number("jahsfjg"); //burada "tip-donusumleri.html:31 Uncaught TypeError: Assignment to constant variable." hatası alınır
+        // console.log(result);        //cunku cont atanmıs degeri degistirilmez
+
+        //eger yukardaki ifadeyi numbera cevirmek istersek
+        const result1 = Number(yas) + 2;
+        console.log(result1);  
+
+        let result2 = Number(yas) + 2;
+        console.log(result2);
+
+        result2 = Number("jfffffffffffffl");
+        console.log(result2);  //NaN
+
+        //Number() methodu içeriisne "true" yazilirsa 1 döndürür
+        result2 = Number(true);
+        console.log(result2);
+
+         //Number() methodu içeriisne "false" yazilirsa 0 döndürür
+         result2 = Number(false);
+         console.log(result2);
+
+         //verilen degeri Stringe cevirmek istersek eger "Sitring()" methodunu kullaniriz
+         const euro = 123;
+         console.log(euro+1);
+         console.log(String(euro)+123);
+
+         //Boolean() methodu
+         //sıfır(0), null, undefined, NaN, ve "" javascript tarafından FALSE olarak kabul edilir harici degerler TRUE dur.
+         const s1 = 5;
+         const s2 = -7;
+         const isim = "kubra";
+         console.log(Boolean(isim));//true
+         console.log(Boolean(s1));//true
+         console.log(Boolean(s2));//true
+
+         const t1 = "";
+         const t2 = null;
+         const t3 = NaN;
+         const t4 = 0;
+         let t5;
+         console.log(Boolean(t1));
+         console.log(Boolean(t2));
+         console.log(Boolean(t3));
+         console.log(Boolean(t4));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmetik Operatorler</title>
+</head>
+<body>
+    
+    <script>
+        const name = "Ali";
+        const surname = "Can";
+        console.log("Name and Surname:"+ name+surname); //concat işlemi
+        console.log(name+" "+surname);
+
+        let result = "23";
+        result = 23+"23";
+        console.log(result);//
+
+
+        //diğeer programlama dillerinde aşağıdaki işlemlerde hata alınır fakat javascripte aşagidaki kullanimda hata almayiz
+        //stringli bir sayi ile çıkarma işlemi yapıldığında sonuç çıkarma sonucu olur
+        result = 5-"21";
+        console.log(result); //-16
+
+        result = "21"-5;
+        console.log(result); //16
+
+
+        //eğer biz stringli bir ifadeyi sayi ile çıkartacak olursak bunun sonucuda NaN dir, aşağidaki gibi...
+        result = "Ali"-4;
+        console.log(result); //NaN
+
+
+        //işlem yapilirken topluca yapilmaz ikişerli yapılır yani 21+3 sonra 24+".kez" işlemleri yapılır.
+        result = 21 + 3 + ".kez"; //24.kez
+        console.log(result);
+
+        const yil = 2021;
+        const dogumTarihi = 1990;
+        const yas = yil-dogumTarihi;
+        console.log("Yaş:"+yas);//31
+        console.log("Yaş:"+yil-dogumTarihi);//NaN
+    </script>
+</body>
+</html>

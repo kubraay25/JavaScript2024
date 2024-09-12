@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islem Onceligi</title>
+</head>
+<body>
+    <script>
+
+        /*Aritmetik işlemler yapilirken bilgisayar operatör önceliğine göre işlem yapar
+        Parantez()
+        Üs Alma **
+        Çarpma * , Bölme /, Mod alma %  bunların kendi aralarında işlem önceliği yoktur
+        Toplama + , Çıkarma -
+        */
+
+        const e = 8/2*(2+2);
+        console.log(e); //16
+
+        let a = 3;
+        let b = ++a;
+        let c = --a;
+        console.log(a,b,c); //
+
+        // a=a+5   a'yı 5le topla a'nın içine at...
+        a +=5; 
+
+        //asagida b'nin degerini azaltip sonucu b olarak yazariz
+        //normalde yukarda b'nin en son ki değeri 4tü
+        //asağıda --b ifadesinde b değerinden 1 çıkartılır dolayısı ile b değeri 3 kalır
+        //x de üçe eşit olur
+        let x = --b;
+        console.log(x,b); //3,3
+
+
+        // --b ifadesinde önce eksiltir sonra atama yapar
+        // b-- ifadesinde önce atama yapar sonra eksiltir
+
+        let g = b--;
+        console.log(g,b);//3,2
+
+        let t = b++
+        console.log(t);//2
+
+        //Aşagidaki durumda bir istisna vardir console.log(sayi++) dediğimizde önce sayiyi yazdirir,tekrardan console.log(sayi++) dediğimizde artırma yapar.
+        let sayi = 123;
+        console.log("Birler Basamagi:"+sayi%10);
+        console.log(sayi++);//123
+        console.log(sayi++);//124
+    </script>
+</body>
+</html>
