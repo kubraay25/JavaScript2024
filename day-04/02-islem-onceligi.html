@@ -46,8 +46,13 @@
         //Aşagidaki durumda bir istisna vardir console.log(sayi++) dediğimizde önce sayiyi yazdirir,tekrardan console.log(sayi++) dediğimizde artırma yapar.
         let sayi = 123;
         console.log("Birler Basamagi:"+sayi%10);
-        console.log(sayi++);//123
-        console.log(sayi++);//124
+        console.log(sayi++);//123  //satir 49 da konsola önce 123 ataması yapılır ve sonra arttırılır yani sayının degeri 124 olur 
+        console.log(sayi++);//124  //satır 50 de konsola önce 124 ataması yapılır sonra artırılır ve sayının en son ki değeri 125 olur
+        sayi++;
+        console.log(sayi);//126
+
+        //yukardaki en önemli nokta konsola yazdırdığı değer ile sayı değerinin farklı olmasıdır 
+    
     </script>
 </body>
 </html>
