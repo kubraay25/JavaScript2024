@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+
+    <style>
+      .green{
+        color:green;
+        font-style: italic;
+      }
+
+      .highlight{
+        background-color: aquamarine;
+        font-style: italic;
+      }
+
+      .big-size{
+      font-size:  5rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 class="title green highlight">
+      DOCUMENT <span style="color: blue">OBJECT</span> MODEL
+    </h1>
+
+    <script>
+
+       //classList: Bir elementin sahip olduğu class lari manipüle etmek için kullanilir
+       //"add": elemente bir class eklemek için kullanilir
+       //"remove": elementin sahip olduğu bir classi kaldırmak için kullanilir
+     
+     const title = document.querySelector("h1.title");
+     console.log(title.classList);
+
+     title.classList.add("big-size");
+     title.classList.remove("highlight");
+     console.log(title.classList);
+
+    </script>
+  </body>
+</html>

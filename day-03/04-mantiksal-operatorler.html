@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mantiksal Operatorler</title>
+  </head>
+  <body>
+    <script>
+      /*
+     
+        And......&&
+        Or.......||
+        Not......!
+
+        */
+
+      const num1 = 12;
+      const num2 = 56;
+      const num3 = 112;
+      console.log(num1 > 5 && num2 < num3 && num3 > 15); //true
+      console.log(num1 == 5 && num2 < num3 && num3 > 15); //false
+      console.log(num2 > 70 || num3 < num1 || num2 > num1); //true
+
+      let s2 = true;
+      let s3 = true;
+      console.log(s2 && true); //true
+      console.log(s2 && s3); //true
+      console.log(s2 && s3 && false); //Flase
+
+      s3 = false;
+      console.log(s2 || s3 || false); //true
+
+
+      /*
+      Mantıksal operatörler (&&, ||, !) "genellikle" true ve false döndürmek için kullanılır, 
+      ancak JavaScript gibi dillerde aslında daha genel bir mantık izlerler ve her zaman yalnızca true veya false döndürmezler. 
+      Bu, operatörlerin nasıl çalıştığı ve JavaScript'te "truthy" ve "falsy" değerler konseptiyle ilgilidir.
+      */
+
+      /*
+      VEYA işleminde ilk TRUE değerin bulunması yeterlidir. Diğerlerinin kontrolune gerek yoktur.
+      Bu yüzden ilk True olan değişkenin değeri döndürürlür, hiçbiri true değilse en sondaki değer döndürülür
+      */
+
+      /* VE işleminde ilk FALSE değerinin bulunması yeterlidir. Diğerlerinin kontrolune gerek yoktur.
+      bu sebeple ilk FALSE olan değişkenin değeri döndürülür, hiçbiri FALSE değilse en sondaki değer döndürülür
+      */
+
+      s2 = "kuş";
+      s3 = "kedi";
+      console.log(s2 || s3); //kuş.......yani burada true değil "s2" değerini döndürür
+      console.log(s2 && s3); //kedi......ve işleminde false değeri yoksa en sonki değeri döndürür
+
+      const animal1 = "kuş";
+      const animal2 = "kedi";
+      const animal3 = "kelebek"
+      const animal4 = "";
+      console.log(animal1 && animal2 && animal3 && animal4);//""...boşluk olur
+      console.log(animal1 || animal2 || animal3 || animal4);//kuş
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="title" style="color: red">DOCUMENT <span style="color: blue">OBJECT</span> MODEL</h1>
+
+    <ul class="menu">
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Unde adipisci ad ratione?</li>
+        <li>Pariatur accusamus labore fugit.</li>
+        <li>Culpa non debitis animi!</li>
+        <li>Voluptate totam ducimus exercitationem?</li>
+    </ul>
+    
+    <p class="about"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Optio dolorum reprehenderit veniam voluptate cupiditate explicabo 
+    similique <em>architecto beatae consequuntur veritatis? </em>Facilis accusantium 
+    deserunt tenetur quos quo laborum ducimus odio animi.</span><span>Deserunt a 
+    quis autem, est repellendus, ex, distinctio beatae mollitia maiores odit saepe. 
+    Voluptate nobis, porro iste officiis tenetur blanditiis consequuntur quam tempore 
+    ipsa incidunt, vitae perferendis vero, nulla ea.</span></p>
+
+    <script>
+
+        //h1 tagi icerisindeki class degerini secmek istersem
+        const title = document.querySelector("h1.title");//.title
+        console.log(title);
+        
+        //ul tagi icerisindeki ilk li'yi secmek istersem
+        const firstMenuItem = document.querySelector("ul.menu li");
+        console.log(firstMenuItem);
+        
+        //ul tagi icerisindeki son li'yi seçmek istersem
+        const lastMenuItem = document.querySelector("ul.menu li:last-child")
+        console.log(lastMenuItem);
+
+        //ul tagi içerisindeki üüçüncü li'yi seçmek istersem
+        const threeMenuItem = document.querySelector("ul.menu li:nth-child(3)");
+        console.log(threeMenuItem);
+
+        // li:last-child--> en son ki li tagını verir
+        // li:nth-child(indeks)--> hangi sırayı secmek istersek onun sıra numarası parantez içine gelir
+    </script>
+</body>
+</html>

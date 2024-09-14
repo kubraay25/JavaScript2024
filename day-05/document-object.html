@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object</title>
+</head>
+<body>
+    <script>
+
+        /*
+        sayfaya sağ tıklayıp VİEW PAGE SOURCE yaparsak kaynak kodları görmüş olacağız, server'dan bize gelen gerçek
+        kodların yazılmış ham hali...orijinal hali,manipüle edilmemiş hali
+
+        sayfaya sağ tıklayıp İNSPECT yaparsak manipüle edilmiş yani document.querySelector() kullanilarak 
+        oluşturduğumuz yeni değişiklikleri görmüş oluruz, yani DOM dediğimiz kısımdır.
+        */
+
+        /*
+        Bir web sayfasindaki diğer tüm nesnelerin sahibi olan ana nesneye "document objejct" denir. 
+        Document nesnesi web sayfamızı temsil eder. 
+        Eğer sayfa içerisinde bir nesneye erişmek istenilirse "document" nesnesi kullanilir
+
+        DOM, JavaScript kullanarak web sayfalarını dinamik ve etkileşimli hale getirmenizi sağlar. 
+        Document nesnesi, HTML belgesini temsil eder ve bu belgeyi manipüle etmek için kullanılabilecek birçok metoda ve 
+        özelliğe sahiptir. Bu şekilde, bir sayfanın içeriğini, yapısını veya stilini dinamik olarak değiştirebilirsiniz.
+        */
+
+        //üzerinde değişiklik yapacağımız nesneyi öncelikle seçmemiz gerekir,bunun içinde aşağıdaki yapıyı kullaniriz
+
+        document.querySelector(selector);
+        //document--> objesi içerisinde 
+        //querySelector--> bir şeyi seçmek istiyorum
+        //selector--> css selectorleri kullanilir
+
+        document.querySelectorAll(selector);
+        //selectorle eşleşen tüm elemanları seçer ve bir dizi içeriisnde tutar
+    </script>
+</body>
+</html>

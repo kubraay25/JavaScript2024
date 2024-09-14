@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="title" style="color: red">
+      DOCUMENT <span style="color: blue">OBJECT</span> MODEL
+    </h1>
+
+    <ul class="menu">
+      <li>Lorem ipsum dolor sit.</li>
+      <li>Unde adipisci ad ratione?</li>
+      <li>Pariatur accusamus labore fugit.</li>
+      <li>Culpa non debitis animi!</li>
+      <li>Voluptate totam ducimus exercitationem?</li>
+    </ul>
+
+    <p class="about">
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolorum
+        reprehenderit veniam voluptate cupiditate explicabo similique
+        <em>architecto beatae consequuntur veritatis? </em>Facilis accusantium
+        deserunt tenetur quos quo laborum ducimus odio animi.</span
+      ><span
+        >Deserunt a quis autem, est repellendus, ex, distinctio beatae mollitia
+        maiores odit saepe. Voluptate nobis, porro iste officiis tenetur
+        blanditiis consequuntur quam tempore ipsa incidunt, vitae perferendis
+        vero, nulla ea.</span
+      >
+    </p>
+
+    <script>
+      //innerText: Bir elementin içindeki yazıyı okumak veya değiştirmek için kullanilir.
+      //innerHTML: Bir elementin içindeki HTML'i okumak veya değiştirmek için kullanilir.
+      //classList: Bir elementin sahip olduğu class lari manipüle etmek için kullanilir
+
+      //h1 tagi icerisindeki class degerini secmek istersem
+      const title = document.querySelector("h1.title"); //.title
+      title.innerText = "Hello DOM";
+      console.log(title);
+
+      //p tagi içerisindeki class değeri about olan ve alttaki paragraftaki "em" tagı içerisindeki yazıyı değiştirelim
+      //.about yanındaki "boşluk"=içinde demek....
+      const about = document.querySelector(".about em");
+      console.log(about);
+      about.innerText = "zorun üzerine gidersen zorun adi isim değiştirir kolaylik olur";
+
+      //eger sectiğim kısma HTML gömmek istersem innerHTML kullanirim.
+      //.about yanındaki "boşluk"=içinde demek....
+      // const about = document.querySelector(".about em");
+      // console.log(about);
+      //  about.innerText = "<u>zorun üzerine gidersen zorun adi isim değiştirir kolaylik olur</u>"; 
+      //eger innerText kullanmiş olsaydım bu yazıyı oraya "u" tagı ile yazıcaktı
+
+    </script>
+  </body>
+</html>

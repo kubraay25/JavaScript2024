@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Selector</title>
+  </head>
+  <body>
+
+    <h1 class="title" style="color: red">
+      DOCUMENT <span style="color: blue">OBJECT</span> MODEL
+    </h1>
+
+    //ul.menu>li*5>lorem4 ifadesinin açilimi aşağidaki gibidir 
+    //ul istiyorum
+    //ul nin class ismi menu olsun 
+    //> içerisinde 
+    //li'ler den 5 tane olsun
+    //li'lerin içerisinde de loremli dört kelimeden oluşan ifadeler olsun
+
+    <ul class="menu">
+      <li>Lorem ipsum dolor sit.</li>
+      <li>Animi obcaecati dicta repellat.</li>
+      <li>Omnis ipsam explicabo natus.</li>
+      <li>Nisi est tempore nihil!</li>
+      <li>Quibusdam est iste ipsam?</li>
+    </ul>
+
+    <p class="about"><span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nemo
+        ex asperiores laudantium et quis, quae obcaecati libero accusantium
+        suscipit consequuntur <em>nihil tempore reprehenderit facilis quos facere.</em> 
+        Aperiam, ex repellendus?</span><span>Distinctio similique odio sit quibusdam dolorem amet nobis,
+        consequuntur quidem doloribus magnam repudiandae beatae possimus odit
+        tempore debitis accusantium provident, earum ipsum ullam? Porro, iure.
+        Numquam quas nam odit eius!</span>
+    </p>
+
+    <script>
+
+        //yukarda herhangi bie şey üzerinde değişiklik yapacaksam önce onu seçmem gerekir, mesela title üzerinde değişiklik için;
+        let title = document.querySelector("h1.title");
+        console.log(title);//
+       
+    </script>
+  </body>
+</html>
