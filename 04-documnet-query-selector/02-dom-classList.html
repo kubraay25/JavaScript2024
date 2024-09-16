@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+    <h1 class="name blue">Ali Gel</h1>
+    <p class="mesaj"></p>
+
+    <script>
+
+        //document.querySelector(".name")--> <h1 class="name blue">Ali Gel</h1>  bu yapiyi secer
+        //document.querySelector(".name").classList--> name ve blue class'larini seçer
+
+        //h1 tagindaki klas isimlerini seçmek istersek aşağıdaki yapıyı kullanirız
+        const name = document.querySelector(".name").classList;//name,blue
+        console.log(name);
+
+        //eğer klas ismi eklemek istersek
+        document.querySelector(".name").classList.add('red');//name,blue,red
+
+        //klas ismi silmek istersek
+        document.querySelector(".name").classList.remove('blue');//
+
+     
+        
+    </script>
+</body>
+</html>

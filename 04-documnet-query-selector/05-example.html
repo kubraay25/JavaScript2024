@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+</head>
+<body>
+
+  <input type="number"  id="txtNum1">
+  <input type="number"  id="txtNum2">
+  <button onclick="sum()">Sum</button>
+  
+  <p id="lblResult"></p>
+    
+</body>
+<script>
+    //EXAMPLE:Textbox'lardan alınan iki sayıyı, butona basılınca toplayan ve sonucu bir label içerisinde gösteren sayfayı yapınız.
+    //input:number --> <input type="number" name="" id=""> (enter dersek kısayol oluşur)
+    //number tanımlasan dahi form elemanlarından gelen her şey string döner,bundan dolayı Number() methodu kullandık
+    //sum() fonksiyonu oluşturduk iki sayının toplanması.
+    //"<p>" tagı oluşturmamızın sebebi sonucu bize paragrafta versin diye
+
+    function sum(){
+        const txtNum1 = document.querySelector("#txtNum1");
+        const txtNum2 = document.querySelector("#txtNum2");
+
+        const num1 =Number(txtNum1.value);
+        const num2 =Number(txtNum2.value);
+
+        const result = num1 + num2;
+
+        const lblResult = document.querySelector("#lblResult");
+        lblResult.innerHTML = "Sonuç:"+ result;
+    
+    }
+
+  
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+    // tag-ismi.class-ismi+ENTER bize halihazirda aşagidaki yapiyi verir (h1.name,p.mesaj) kisayol
+
+    <h1 class="name">Ali Gel</h1>
+    <p class="mesaj"></p>
+
+    <script>
+
+        //document.querySelector(".name")--> <h1 class="name">Ali Gel</h1>  bu yapiyi secer
+        //document.querySelector(".name").innerText--> Ali Gel yazisini seçer
+
+        const name = document.querySelector(".name").innerText;
+        //console.log(name);//Ali Gel
+
+        document.querySelector(".mesaj").innerText = name;// name ismini p taginin arasina yerleştiriyoruz
+
+        //Aşağıda iki yapıda birbirinin aynısı, innerText yerleştirdik.
+        document.querySelector(".mesaj").innerText = "merhaba " + name;
+        document.querySelector(".mesaj").innerText = `Merhaba ${name}`;
+
+        
+    </script>
+</body>
+</html>

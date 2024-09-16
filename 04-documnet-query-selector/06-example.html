@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="txtNum1">
+    <input type="text" id="txtNum2">
+
+    <button onclick="sum()">sum</button>
+
+    <p id="lblResult"></p>
+
+    
+    <script>
+         //EXAMPLE:Textbox'lardan alınan iki sayıyı, butona basılınca toplayan ve sonucu bir label içerisinde gösteren sayfayı yapınız.
+
+         function sum(){
+         const txtNum1 = document.querySelector("#txtNum1");
+         const txtNum2 = document.querySelector("#txtNum2");
+
+         const num1 = Number(txtNum1.value);
+         const num2 = Number(txtNum2.value);
+
+         const result = num1 + num2;
+
+        const lblResult = document.querySelector("#lblResult");
+        console.log(lblResult);
+        lblResult.innerHTML = "Sonuç:"+ result;
+         }
+    </script>
+</body>
+</html>

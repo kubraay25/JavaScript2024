@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="txtName" placeholder="Enter your name"> 
+    <button onclick="sayHello()">Say Hello</button>
+
+    <script>
+        /*
+        <input type="text" id="txtName" placeholder="Enter your name">....AÇIKLAMASI
+
+
+        <input> etiketi: HTML form ögesi olan <input> etiketi, kullanicidan veri girişi almak için kullanilir, kullanici bu tür
+        ögelere bir şeyler yazabilir ya da seçim yapabilir  <input> tagı kapanmayan bir etikettir (en sonunda </input> yazılmaz )
+
+        type="text"
+        type: bu, <input> ögesinin türünü belirtir, type="text" ise kullanicinin bir metin girişi yapabileceği bir alan olduğunu
+        belirtir,bir sürü <input> etiket türleri vardır
+        type="password": şifre alanı, girdiğiniz karakterler gizlenir
+        type="email": E-posta doğrulaması yapılabilen bir giriş alanı
+        type="number": sadece sayısal giriş kabul eden alan
+        type="checkbox":işaretlenebilir kutu
+        type="radio": tek seçenekli işaret kutusu
+
+        id="txtName";
+        id:HTML ögesini benzersiz bir şekilde tanımlamak için kullanilir, bu değer sayfadaki hiçbir öge ile aynı olmamalıdır
+        javascriptte bu ögeye şu şekilde ulaşılır "document.querySelector("txtName").value"
+        id="txtName": bu bir input ögesine "txtName" adında bir kimlik(ID) verir. javascript ya da CSS ile bu ögeyi seçmek için
+        bu kimliği kullanirsin
+
+        placeholder="Enter your name":
+        placeholder:Bu kullanıcıya alanın içine bir ipucu ya da açıklama vermek için kullanilir
+        kullanıcı alana tıklayana kadar gösterilen metindir,kullanıcı alana metin girdiğinde bu placeholder kaybolur
+        Burada "Enter your name" ifadesi, kullanıcıya bu alana adını yazmasını söyleyen bir mesaj olarak görünür
+        Placeholder, kullanıcı dostu form oluşturmak için yaygın olarak kullanılır */
+    </script>
+
+    <script>
+        /*
+         <button onclick="sayHello()">Say Hello</button>.....AÇIKLAMASI
+
+         Bir şeye tıklanılmasını istiyorsak "onclick" yapısı kullanılmalıdır
+         <p onclick="sayHello()">Say Hello</p>  burada öncelikle sayHello() methodu oluşturuldu browserda Say Hello butonuna tıklanılması için
+         Burada önemli olan ilgili tagın içeriisne girip olayı tanımlamaktır
+
+        */
+    </script>
+
+    <script>
+        
+        //input:text yazip enter ya da tab tuşuna basarsak aşağidaki yapi oluşur
+        //<input type="text" name="" id="">  
+        // VALUE: Bir form elemenının değerini okumak ya da değiştirmek için kullanılır
+        //bir önceki 03-dom-value dosyasında browser açıldığında Say Hello butonuna tıkladığımızda alert geliyordu
+        //şimdi ise browser açıldığında "Enter your name" kutucuğuna input gireceğiz ve alert mesajı çıktığında bunu mesaj olarak bize gösterecek
+        //dolayısı ile "Enter your name" elementini önce seçmemiz gerekecek
+        //"." class seçer "#" id seçer
+
+        function sayHello(){
+            //document.querySelector("#txtName")--> burası "<input type="text" id="txtName" placeholder="Enter your name">" buranın tamamını verir
+            //document.querySelector("#txtName").value--> Enter your name kısmına yazılacak değeri verir
+            const name = document.querySelector("#txtName").value;
+            alert(name);
+            alert("merhaba "+ name);// değişik türlerde kullanılabilir
+            console.log(name);
+        }
+    </script>
+</body>
+</html>

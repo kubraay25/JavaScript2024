@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="txtMain" placeholder="Enter your name">
+    <button onclick="sayHello()">Say Hello</button>
+    <script>
+        
+        //input:text yazip enter ya da tab tuşuna basarsak aşağidaki yapi oluşur
+        //<input type="text" name="" id="">  
+        // VALUE: Bir form elemenının değerini okumak ya da değiştirmek için kullanılır
+        //script tagi içerisine yazdığımız kod hemen çalışır
+        //fakat eğer kodum hemen çalışsın istemiyorsam olaylardan (inevt) faydalanmam gerekiyor
+        //fonksiyon dediğimiz kodlar sadece çağrıldığnda çalışan kodlardır
+        //FONKSİYON KALIBI: function functionAdi(){} --> bu şekilde tanımlanır
+        //function sayHello(){} alert("hello"); burada alert("hello") çalışır çünkü fonksiyonun içeriisnde değil
+        //function sayHello(){alert("hello");}  burada alert("hello") çalışmaz çünkü fonksiyonun içerisinde biz çalıştırırsak ya da çağırırsak çalışır
+        //fonksiyonu çağırmak için de sadece fonksiyonun ismini yazmak yeterlidir sayHello gibi
+
+        function sayHello(){
+            alert("hello");
+        }
+
+        // sayHello();  //methodu böyle çağırırız
+        //biz methodu button tagi içeriisinden çağırmak istiyoruz dolayısı ile oraya yazıyoruz
+        //button tagı içerisinden çağırdığımızda browser açıldığında direkt karşımıza artık alert mesajı çıkmaz
+        //button tagı içerisinden çağırdığımız için browser açıldığında Say Hello butonuna tıkladığımızda alert mesajını göreceğiz
+
+       
+
+    </script>
+</body>
+</html>
