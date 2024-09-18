@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional Statements</title>
+  </head>
+  <body>
+    <!-- EXAMPLE: Bir Textbox tan alınan fiyat bilgisi 
+     1500 den büyükse %15,
+     1000 den büyükse %13,
+     700 den büyükse %10,
+     500 den büyükse %7,
+     300 den büyükse %5,
+     diğer durumlarda %2 indirim uygulayıp sonucu yazan program yapınız.
+     -->
+
+    <input type="number" id="numDeger" />
+    <button onclick="sonuc()">sonuc</button>
+    <p id="netice"></p>
+  </body>
+  <script>
+    //IF-ELSE......................
+    // değilse ibaresi eklenir
+
+    function sonuc() {
+      const numDeger = document.querySelector("#numDeger");
+      const result = document.querySelector("#netice");
+
+      let num1 = numDeger.value;
+
+      switch (true) {
+        case num1 > 1500:
+          num1 *= 0.85;
+          break;
+        case num1 > 1000:
+          num1 *= 0.87;
+          break;
+        case num1 > 700:
+          num1 *= 0.9;
+          break;
+        case num1 > 500:
+          num1 *= 0.93;
+          break;
+        case num1 > 300:
+          num1 *= 0.95;
+          break;
+        default:
+          num1 *= 0.98;
+      }
+
+      result.innerHTML = num1;
+    }
+  </script>
+</html>

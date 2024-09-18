@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Light Mode</title>
+
+    <style>
+      .dark {
+        background-color: black;
+        color: rgb(242, 227, 227);
+      }
+
+      .mode {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: chartreuse;
+      }
+    </style>
+  </head>
+
+  <body class="dark">
+    <!-- 
+    .dark sınıfı, bir ögenin arka planını siyah yapar ve metin rengini hafif pembe bir renge ayarlar
+    background-color: black; sınıfın uygulandığı HTML elemanının arka plan rengini siyah yapar
+    color: rgb(242, 227, 227);sınıfın uygulandığı ögedeki metin rengini belirler
+    -->
+    <!-- 
+     Dark-light mode switcher uygulaması yapınız, Dark Mode,Light Mode renkleri aşağıda verilmiştir
+     Page background color,    black,white
+     Page text color,          white,black
+     Button background color,  white,black
+     Button text color,        black,white
+     -->
+
+    <h1>Dark Mode Switcher</h1>
+
+    <p>
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat iste
+        autem in? Facere voluptatum recusandae nisi quae libero at vel
+        repudiandae fugit exercitationem amet aut, ullam maiores, esse neque
+        animi.</span
+      ><span
+        >Iste nulla doloremque repellendus eaque, facilis veritatis assumenda
+        expedita pariatur impedit culpa voluptas iusto eum molestiae accusamus
+        repellat? Mollitia cupiditate quos doloremque amet odio itaque
+        repudiandae deleniti id illum atque.</span
+      ><span
+        >Corrupti culpa voluptatem quo, officiis quia nemo harum voluptas aut
+        commodi quae accusamus nobis. Alias beatae odit commodi saepe, deleniti
+        eligendi, autem et non reiciendis fugit quaerat odio possimus
+        libero?</span
+      ><span
+        >Minima accusantium sed, magni soluta fugiat tempore architecto eius ea
+        odit suscipit vitae quas delectus! Sint dignissimos, doloremque placeat
+        magni fuga consequatur? Aperiam quibusdam deleniti dolorum velit
+        voluptatum inventore autem.</span
+      ><span
+        >Error sequi quisquam dignissimos expedita facere consequuntur, velit
+        libero ut commodi debitis incidunt fugiat esse eius dicta possimus non
+        mollitia. Quisquam quia quod quibusdam accusamus tenetur nam dolor sit
+        cupiditate?</span
+      >
+    </p>
+  </body>
+  <button class="mode" onclick="setMode()">mode</button>
+  <script>
+    function setMode() {
+      const body = document.querySelector("body");
+      if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+      } else {
+        body.classList.add("dark");
+      }
+    }
+  </script>
+</html>
