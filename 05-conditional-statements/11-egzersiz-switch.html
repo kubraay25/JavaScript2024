@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+  </head>
+  <body>
+    <!-- EXAMPLE: Bir Textbox tan alınan fiyat bilgisi 
+     1500 den büyükse %15,
+     1000 den büyükse %13,
+     700 den büyükse %10,
+     500 den büyükse %7,
+     300 den büyükse %5,
+     diğer durumlarda %2 indirim uygulayıp sonucu yazan program yapınız.
+     -->
+    <style>
+      .dark {
+        background-color: aqua;
+        color: brown;
+      }
+    </style>
+
+    <input class="dark" type="number" id="num1" />
+
+    <button onclick="indirimHesapla()" class="dark">indirimHesapla</button>
+
+    <p id="sonucuGoster">sonucu göster</p>
+    <script>
+      function indirimHesapla() {
+        const num1 = document.querySelector("#num1");
+        const sonucuGoster = document.querySelector("#sonucuGoster");
+
+        let degerVer = num1.value;
+
+        switch (true) {
+          case degerVer > 1500:
+            degerVer *= 0.85;
+            break;
+
+          case degerVer > 1000:
+            degerVer *= 0.87;
+            break;
+
+          case degerVer > 700:
+            degerVer *= 0.9;
+            break;
+
+          case degerVer > 500:
+            degerVer *= 0.93;
+            break;
+
+          case degerVer > 300:
+            degerVer *= 0.95;
+            break;
+          default:
+            degerVer *= 0.98;
+        }
+        sonucuGoster.innerText = `${degerVer}`;
+      }
+    </script>
+  </body>
+</html>

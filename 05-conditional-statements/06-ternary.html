@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditional Statements</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary</title>
+  </head>
+  <body>
+    <!--
+    if-else bloğunun tek satırda basit bir şekilde yazılmasıdır
+    örneğin:
+    let maas = 15000;
+    mantıksal_ifade ? doğruysa : yanlışsa
+    console.log(maas>13000 ? "normal" : "az");
+    -->
 
-    <input type="number" id="txtPrice">
-    <button onclick="getPrice()">Get Price</button>
-    <p id="lblResult"></p>
+    <!-- EXAMPLE
+     Emekli ve Çalışan isminde radyo butonlarından oluşan bir form hazırlayın. (Maaş=13500)
+     Çalışan seçildiğinde tam, emekli seçildiğinde ise %10 kesinti uygulayarak maaşı gösteriniz.Bunu Ternary kullanark yapınız
+    -->
+
+    <!--inputlarda "name" isimleri aynı olursa radyo butonlarindan sadece bir tanesi seçili gösterilir
+    nameler aynı değilse ikisinede tıkladıgımızda (check etmeden önce) ikiside mavi işaretlenmiş olur-->
+
+    <!-- radio butonunun özelliği iki tane butondan birisinin seçili olarak gelmesidir bu yüzdende
+     inputlardan birisine checked yazdık-->
+
+     <!--İnput taglari içerisinde "Value" dememizin sebebi radio butonlarının kendi değerleridir
+     bunun sebebi hangi buton seçili ise onun değerini almaktır-->
+
+     <!--("input[name='status']:checked") bunun anlami input taglari içerisinden name'i status olan ve seçili olanı getir-->
+
+     <!-- oninput="maasiHesapla() burada inputa değeer girdiğimde direk hesaplayıp veriyor-->
+
+     <!-- onchange="maasiHesapla: radio butonlarında onchange seçilir ?????????????? BUNU ARAŞTIR-->
     
-</body>
-<script>
-    // if
-    // if-else
-    // switch
-    // ternary
-    // || and &&
-    // Optional chaning
-    // Nullish coalescing
+    <input type="number" id="maasGir" oninput="maasiHesapla()">
+<div>
+    <input type="radio" name="status" id="calisanlar" value="c" onchange="maasiHesapla()" checked>Çalişanlar
+    <label for="calisanlar"></label>
 
-    //bu yapilar programlamada program akışını çeşitlendirmek için kullanılır
+    <input type="radio" name="status" id="Emekliler" value="e" onchange="maasiHesapla()">Emekliler
+    <label for="Emekliler"></label>
 
+    <h2 id="sonuc">sonuc:</h2> <!--burada p tagi vazifesi görecek ondan dolayi yazdik-->
+</div>
+   <script>
 
-    // IF.....................
-    // sadece tek bir durumu kontrol ediyor
+    function maasiHesapla(){
 
-    /* EXAMPLE:
-    Bir Textbox tan alınan 500tl den büyük fiyatlar için %10 indirim uygulayan programı yapınız
-    */
+        const maasGir = document.querySelector("#maasGir");
+        const status = document.querySelector("input[name='status']:checked");
+        const sonuc = document.querySelector("#sonuc");
 
-   function getPrice(){
+        let maas = maasGir.value;
+        let durum = status.value;
 
-    const txtPrice = document.querySelector("#txtPrice");
-    const lblResult = document.querySelector("#lblResult");
+        maas = durum === "c" ? maas*0.95 : maas*0.97;
 
-    let price = txtPrice.value;
-
-    if(price>500){
-
-        //price = price - price*10/100;
-        //price = price * 0.9;
-          price *= 0.9;
+        sonuc.innerHTML = maas;
     }
 
-    lblResult.innerText = `Last price = ${price}`;//sonuç değerini yazdırır
-
-   }
-</script>
+   </script>
+  </body>
 </html>
