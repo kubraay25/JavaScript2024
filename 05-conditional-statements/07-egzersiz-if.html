@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMPLE</title>
+</head>
+<body>
+    <!--
+    
+    EXAMPLE:
+    Bir Textbox tan alınan 500tl den büyük fiyatlar için %10 indirim uygulayan programı yapınız
+  
+    -->
+
+    <input type="number" id="num1">
+
+    <button onclick="indirimHesapla()">İndirimi Hesapla Butonu</button>
+
+    <p id="numHesap"></p>
+    
+</body>
+<script>
+
+function indirimHesapla(){
+
+    const numDeğeri = document.querySelector("#num1");
+    const numHesapDeğeriniYazdır = document.querySelector("#numHesap");
+
+    let girilenDEger = numDeğeri.value;
+
+    if(girilenDEger>500){
+
+        //irilenDEger = girilenDEger-girilenDEger*10/100
+        girilenDEger *= 0.90;
+        
+    }
+
+    numHesapDeğeriniYazdır.innerText = `indirim hesaplama sonucu:  ${girilenDEger}`;
+}
+
+
+
+</script>
+</html>

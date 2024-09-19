@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09-Egzersiz</title>
+
+    <style>
+
+        .dark{
+            background-color: aqua;
+            color: blue;
+        }
+
+        .mode{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: none;
+            background-color: brown;
+        }
+    </style>
+  </head>
+  <body class="dark">
+    <!-- 
+     Dark-light mode switcher uygulaması yapınız, Dark Mode,Light Mode renkleri aşağıda verilmiştir
+     Page background color,    black,white
+     Page text color,          white,black
+     Button background color,  white,black
+     Button text color,        black,white
+     -->
+
+     <h1>Dark Mode Switcher</h1>
+
+     <p>
+       <span
+         >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo in quis
+         exercitationem voluptatum libero voluptas consectetur. Culpa doloremque
+         dolore ut doloribus aut, architecto atque consequatur est animi
+         dignissimos, pariatur libero!</span
+       ><span
+         >Labore illum adipisci culpa iusto quia? Ea omnis atque veritatis,
+         suscipit quasi cumque quae? Tempore maxime, voluptate nemo porro
+         praesentium nostrum dolorem quasi nihil vel pariatur ad quaerat ut
+         optio.</span
+       >
+     </p>
+  </body>
+
+  <button class="mode" onclick="setMode()"></button>
+
+  <script>
+function setMode(){
+
+    const body = document.querySelector("body");
+
+    if(body.classList.contains("dark")){
+
+        body.classList.remove("dark");
+
+    }else{
+        body.classList.add("dark");
+    }
+}
+  </script>
+
+ 
+</html>
