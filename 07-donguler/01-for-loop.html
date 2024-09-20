@@ -27,13 +27,20 @@ Eğer i değişkeninin sadece döngüye özel olmasını isterseniz let kullanma
 -->
 
     <script>
-      
-      //konsola 10 defa merhaba yazdırın
+      //EXAMPLE:konsola 10 defa merhaba yazdırın
       var i = "merhaba";
-
-      for (var i = 0; i < 11; i++) {
+      for (var i = 1; i < 11; i++) {
         console.log("merhaba");
       }
+
+
+      
+      //EXAMPLE:10a kadar olan sayıların toplamını bulunuz
+      var toplam = 0;
+      for (var i = 0; i < 11; i++) {
+        toplam = toplam + i;
+      }
+      console.log(toplam);
     </script>
   </body>
 </html>
