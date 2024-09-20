@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    "Short circuit" genellikle programlama dillerinde mantıksal operatörlerle ilgili bir terimdir. 
+    Özellikle mantıksal VE (&&) ve mantıksal VEYA (||) işlemlerinde kullanılır.
+    Kısa devre (short circuit), bir ifadenin sonucunun tüm koşullar kontrol edilmeden 
+    belirlenebilmesi durumunda devreye girer.
+    -->
+    <script>
+      const x = 5;
+      const y = 4;
+      const z = 14;
+      console.log(x > y && z > y && y == 4); //true
+      console.log(x > y && z > y && y); //4 çünkü hepsi true ise en sondaki değeri döndürür
+      console.log(x > y && y > z && y); //false
+
+      //short circuit
+
+      z > 5 && z < 25 && alert("Congratulation!"); //alert çalışır çünkü en sonki methodu çalıştıracak
+
+      //üstteki kodun if hali
+
+      if (z > 5 && z < 25) {
+        alert("Congratulation!");
+      }
+
+      //OR
+      console.log(z < y || y > x || y > z); //false
+      console.log(z < y || y > x || z); //14
+      console.log(z < y || y < x || z); //true
+
+      //short circut
+      y === 35 || alert("Not İzmir"); // buradaki ifade de yandaki işlem true ise alert çalışır false ise çalışmaz
+
+      //ifde parantez içi doğru yani true olursa alttaki kodu çalıştırır
+      if (y !== 35) {
+        alert("Not İzmir!");
+      }
+    </script>
+  </body>
+</html>
