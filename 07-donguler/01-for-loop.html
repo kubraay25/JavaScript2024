@@ -12,12 +12,28 @@
 
     for(var i=0; i<10; i++){
     }
-    
+
 Neden var kullanılmış?
 var kullanıldığında, değişken fonksiyon kapsamındadır (function scope), 
 yani bir fonksiyon içinde tanımlanmışsa, bu fonksiyonun her yerinde geçerlidir.
 Eğer döngü dışında da i'yi kullanmak isterseniz, var kullanabilirsiniz, 
 çünkü var blok (örneğin for döngüsü) kapsamına değil, fonksiyon kapsamına sahiptir.
+
+Neden let değil?
+Eğer let kullanılsaydı, i sadece bu for döngüsünün içinde geçerli olurdu. 
+let blok seviyesinde (block scope) tanımlama yapar. 
+Eğer i değişkeninin sadece döngüye özel olmasını isterseniz let kullanmanız daha mantıklıdır.
+
 -->
+
+    <script>
+      
+      //konsola 10 defa merhaba yazdırın
+      var i = "merhaba";
+
+      for (var i = 0; i < 11; i++) {
+        console.log("merhaba");
+      }
+    </script>
   </body>
 </html>
