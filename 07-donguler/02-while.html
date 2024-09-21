@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WHİLE</title>
+  </head>
+  <body>
+    <!--
+    While Dongusu:
+    Döngünün genelde ne kadar döneceği belli olmadığında kullanılır
+    While döngüsünde sadece tek bir şart vardır
+    Doğru olduğu sürece döngü devam eder
+
+    while(a>50){
+
+    }
+    -->
+
+    <!--
+    For döngüsü, genellikle bir belirli sayıda tekrar edeceği bilinen işlemler için kullanılır. 
+    Örneğin, bir dizinin elemanlarını gezmek gibi.
+    While döngüsü ise, bir şart sağlandığı sürece çalışır ve genellikle tekrar sayısının önceden bilinmediği durumlarda kullanılır.
+    -->
+
+    <!--
+    EXAMPLE: Textbox tan alinan sayinin faktöriyelini bulan programi yaziniz
+    -->
+    <input type="sayiYazber" id="sayiGir" />
+
+    <button onclick="factoriel()">Factoriel</button>
+
+    <h3 id="sonucuGoster"></h3>
+
+    <script>
+      function factoriel() {
+        const sayi = document.querySelector("#sayiGir");
+        let sayiYaz = sayi.value;
+
+        const sonuc = document.querySelector("#sonucuGoster");
+
+        let f = 1;
+
+        while (sayiYaz > 1) {
+          f = f * sayiYaz;
+          sayiYaz--;
+        }
+        sonuc.innerHTML = f;
+      }
+    </script>
+  </body>
+</html>

@@ -49,10 +49,10 @@
         const indirimMiktariGir = document.querySelector("#indirimMiktariGir");
         const indirim = indirimMiktariGir.value;
 
-        const urunFiyatlari = document.querySelectorAll("#urunler li span");  //butun ürünlerin olduğu spanları çağırdığım için "querySelectorAll" methodunu kullandım.
-                                                                              //çünkü bunu for döngüsü içeriisnde kullanacağım
+        const urunFiyatlari = document.querySelectorAll("#urunler li span"); //butun ürünlerin olduğu spanları çağırdığım için "querySelectorAll" methodunu kullandım.
+        //çünkü bunu for döngüsü içeriisnde kullanacağım
 
-        for (let i = 0; i < 10; i++) {    
+        for (let i = 0; i < 10; i++) {
           const fiyat = urunFiyatlari[i].innerText;
           const yeniFiyat = fiyat - (fiyat - indirim) / 100;
           urunFiyatlari[i].innerText = yeniFiyat;
@@ -62,7 +62,6 @@
       // bütün spanları seçtiğimizde dizi olarak gelirler dolayısıyla dizi olarak gelen fiyatları tek tek seçmek için [] kapalı parantezi kullandim
       //ürün listesine sonradan çok sayıda ürün eklenebilir bundan dolayıda "urunFiyatlari.length" methodunu kullandik yani ürün listesinin hepsini bize döndürecek
       //"(let i = 0; i < 10; i++)" bu sadece sayisini bildiğimiz ürün listesi için geçerlidir ama belli değilse sonradanda eklenecekse "length" kullanilabilir.
-      
     </script>
   </body>
 </html>
