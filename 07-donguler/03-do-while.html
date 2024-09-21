@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do While</title>
+  </head>
+  <body>
+    <!--
+    do-while döngüüsnde do yapısı her halükarda bir kere çalışır
+    sonra koşul kontrol edilir
+    -->
+    <!--
+    while(KOŞUL){  görüldüğü üzre koşul sağlanmadıkça asla döngü çalışmaz
+    }
+
+    do(){          görüldüğü üzre do parantez içini en az bir kere çalıştırır ama şart sağlanmazsa kırılır
+    }while(KOŞUL)
+    -->
+
+    <!--EXAMPLE:Bir textbox tan alınan sayının sayı değerlerinin toplamını hesaplayıp sonucu bir h3 içinde 
+    gösteren programı yapınız
+    -->
+
+    <!--
+    "Math.floor()" methodu ondalık kısmı atar
+    -->
+
+    <input type="number" id="sayiGir" />
+
+    <button onclick="sayiDegerleriToplami()">sayiDegerleriToplami</button>
+
+    <h3 id="sonucuGoster">sonucuGoster</h3>
+    <script>
+      function sayiDegerleriToplami() {
+        const sayiGir = document.querySelector("#sayiGir");
+        let sayi = sayiGir.value;
+
+        const sonucuGoster = document.querySelector("#sonucuGoster");
+
+        let toplam = 0;
+
+        do {
+          const sonBasamak = sayi % 10;
+          toplam = toplam + sonBasamak;
+
+          sayi = Math.floor(sayi/10); //"Math.floor()" methodu sayıyı 10 böler ondalik kısmın sol tarafını atar
+        } while (sayi > 0);  //en son 0.1 olduğundan 0>0 olamayacağından döngü kırılır.
+
+        sonucuGoster.innerHTML = toplam;
+
+        //sayi = 12255;
+        //sayi = 1225;
+        //sayi = 122;
+        //sayi = 12;
+        //sayi = 1;
+        //sayi = 0;
+      }
+    </script>
+  </body>
+</html>
