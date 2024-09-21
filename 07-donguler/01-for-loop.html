@@ -33,14 +33,23 @@ Eğer i değişkeninin sadece döngüye özel olmasını isterseniz let kullanma
         console.log("merhaba");
       }
 
-
-      
       //EXAMPLE:10a kadar olan sayıların toplamını bulunuz
       var toplam = 0;
       for (var i = 0; i < 11; i++) {
         toplam = toplam + i;
       }
       console.log(toplam);
+
+      // //EXAMPLE:1.öğrencinin adını giriniz,2.öğrencinin adını giriniz,3.öğrencinin adını giriniz,4.öğrencinin adını giriniz
+      // console.log("1.öğrencinin adini giriniz");
+      // console.log("2.öğrencinin adini giriniz");
+      // console.log("3.öğrencinin adini giriniz");
+      // console.log("4.öğrencinin adini giriniz");
+
+      for (var i = 1; i < 5; i++) {
+        console.log(`${i}.öğrencinin adini giriniz`);//ikisini ayrı ayrı çalıştırabilirsin
+        console.log(i+".öğrencinin adini giriniz");
+      }
     </script>
   </body>
 </html>
