@@ -33,14 +33,17 @@
      <!-- oninput="maasiHesapla() burada inputa değeer girdiğimde direk hesaplayıp veriyor-->
 
      <!-- onchange="maasiHesapla: radio butonlarında onchange seçilir ?????????????? BUNU ARAŞTIR-->
+
+     <!-- "id" ve "for" değerleri aynı oldugunda sadece butonlara değil "label" arasındaki kullanmış olduğumuz
+      textlerede tıkladığımızda butonlar seçilmiş olur-->
     
     <input type="number" id="maasGir" oninput="maasiHesapla()">
 <div>
-    <input type="radio" name="status" id="calisanlar" value="c" onchange="maasiHesapla()" checked>Çalişanlar
-    <label for="calisanlar"></label>
+    <input type="radio" name="status" id="calisanlar" value="c" onchange="maasiHesapla()" checked>
+    <label for="calisanlar">Çalişanlar</label>
 
-    <input type="radio" name="status" id="Emekliler" value="e" onchange="maasiHesapla()">Emekliler
-    <label for="Emekliler"></label>
+    <input type="radio" name="status" id="Emekliler" value="e" onchange="maasiHesapla()">
+    <label for="Emekliler">Emekliler</label>
 
     <h2 id="sonuc">sonuc:</h2> <!--burada p tagi vazifesi görecek ondan dolayi yazdik-->
 </div>
