@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>If Example</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:Kullanıcıdan bir sayı alarak pozitif mi, negatif mi, yoksa sıfır mı olduğunu kontrol edin.
+    -->
+    <input type="number" id="birSayi" />
+    <button onclick="birSayiAll()">sonucu goster</button>
+
+    <p id="sonucuGoster"></p>
+    <script>
+      function birSayiAll() {
+        const sayi = document.querySelector("#birSayi");
+        let girilenSayi = sayi.value;
+
+        const sonucu = document.querySelector("#sonucuGoster");
+
+        if (girilenSayi > 0) {
+          girilenSayi = "bir pozitif tam sayidir";
+        } else if (girilenSayi < 0) {
+          girilenSayi = "bir negatif tamsayidir";
+        } else {
+          girilenSayi = "sifirdir";
+        }
+        sonucu.innerHTML = girilenSayi;
+      }
+    </script>
+  </body>
+</html>
