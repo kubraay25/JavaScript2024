@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXAMPLE</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:yaş hesaplayan bir fonksiyon yazınız
+    -->
+
+    <script>
+      //sadece aşağıdaki fonksiyon yazıldığında browser açıldığında çalışmaz
+
+      function getAge(simdikiYasi) {
+        const guncelYil = 2024;
+        const age = guncelYil - simdikiYasi;
+        alert(age);
+      }
+
+      //ama eğer ben aşağıdaki gibi fonksiyonu çağırırsam alert mesajı anında çalışr
+      getAge(2012);
+
+      //yukardaki kodu şu şekilde daha dinamik yazabiliriz
+      function getAge(dogumTarihi) {
+        const guncelYil = new Date().getFullYear(); // Dinamik yıl
+        const age = guncelYil - dogumTarihi;
+        alert(age);
+      }
+
+      getAge(2021);
+    </script>
+  </body>
+</html>
