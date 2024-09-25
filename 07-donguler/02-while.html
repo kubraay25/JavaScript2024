@@ -26,26 +26,36 @@
     <!--
     EXAMPLE: Textbox tan alinan sayinin faktöriyelini bulan programi yaziniz
     -->
-    <input type="sayiYazber" id="sayiGir" />
+    <input type="number" id="txtNumber" />
 
     <button onclick="factoriel()">Factoriel</button>
 
-    <h3 id="sonucuGoster"></h3>
+    <h3 id="result"></h3>
 
     <script>
       function factoriel() {
-        const sayi = document.querySelector("#sayiGir");
-        let sayiYaz = sayi.value;
+        const sayi = document.querySelector("#txtNumber");
+        let number = sayi.value;
 
-        const sonuc = document.querySelector("#sonucuGoster");
+        const result = document.querySelector("#result");
+
+        //çarpma işlemi yapılıyor ise etkisiz eleman olduğu için "1" kullanilir
+        //toplama işlemi yapılıyor ise "0" kullanilir
 
         let f = 1;
 
-        while (sayiYaz > 1) {
-          f = f * sayiYaz;
-          sayiYaz--;
+        if (sayi < 0) {
+          console.log("Negatif sayilarin faktöriyeli alinamaz");
+        } else if ((sayi == 0) || (sayi == 1)) { //burada sayi 0 ve 1 için kontrol edecek
+          result.innerHTML = 1;
+        } else {
+          while (number > 1) {
+            f = f * number;
+            number--;
+          }
+          result.innerHTML = f;
         }
-        sonuc.innerHTML = f;
+        
       }
     </script>
   </body>
