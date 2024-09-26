@@ -17,23 +17,32 @@
     EXAMPLE:yaş hesaplayan bir fonksiyon yazınız
     -->
 
+    <!--
+       
+      NOT:fonksiyon içinde istediğiniz sonucu farklı durumlara göre dışarı verebilirsiniz.
+      bunun için "return" kullanırız
+      bir değer döndüreceği anlamına gelir
+      ve fonksiyonun sonlandığı anlamına gelir
+      değeri istediğimiz yerde istediğimiz şekilde kullanabiliriz
+      -->
+
     <script>
-    //Bir function oluşturuyorum
-      function getAge(simdikiYasi) {
-        const guncelYil = 2024;
-        const age = guncelYil - simdikiYasi;
-        alert(age);
-      }
+    // //Bir function oluşturuyorum
+    //   function getAge(simdikiYasi) {
+    //     const guncelYil = 2024;
+    //     const age = guncelYil - simdikiYasi;
+    //     alert(age);
+    //   }
 
-      //alert mesajimin çalışmasi için aşağıdaki gigi çağırıp yukardaki fonksiyonumun çalışmasını sağlıyorum
-      getAge(2012);
+    //   //alert mesajimin çalışmasi için aşağıdaki gigi çağırıp yukardaki fonksiyonumun çalışmasını sağlıyorum
+    //   getAge(2012);
 
-      //yukardaki fonksiyonun daha dinamik hali
-      function getAge(dogumTarihi) {
-        const guncelYil = new Date().getFullYear(); // Dinamik yıl
-        const age = guncelYil - dogumTarihi;
-        alert(age);
-      }
+    //   //yukardaki fonksiyonun daha dinamik hali
+    //   function getAge(dogumTarihi) {
+    //     const guncelYil = new Date().getFullYear(); // Dinamik yıl
+    //     const age = guncelYil - dogumTarihi;
+    //     alert(age);
+    //   }
 
       //yukardaki fonksiyonun en dinamik hali
       function getAge(dogumTarihi) {
@@ -42,13 +51,10 @@
         return age;
       }
 
-      /*
-      NOT:fonksiyon içinde istediğiniz sonucu farklı durumlara göre dışarı verebilirsiniz.
-      bunun için "return" kullanırız
-      bir değer döndüreceği anlamına gelir
-      ve fonksiyonun sonlandığı anlamına gelir
-      değeri istediğimiz yerde istediğimiz şekilde kullanabiliriz
-      /*
+      let age = getAge(1995);
+      console.log(age)
+
+   
     </script>
   </body>
 </html>
