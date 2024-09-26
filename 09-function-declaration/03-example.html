@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example-2</title>
+</head>
+<body>
+
+    <!--
+    EXAMPLE:Bir sayinin asal olup olmadığını bulan bir fonksiyon yazınız
+    -->
+
+    <!--
+    Not: Normalde button tagi içerisine onclick="" yerleştiriyorduk, fakat ben istiyorum ki button olmadan direkt sayıyı girdiğimde
+    fonksiyonum çalışsın dolayısı ile input tagimin içerisine "oninput="calculate()" event(olay)ini yerleştirdim
+    -->
+
+    <!--
+    function calculate() {
+    const txtNumber = document.querySelector("#txtNumber");
+    const number = txtNumber.value;
+
+    const sonuc = document.querySelector("#txtResult");
+
+    // Eğer girilen veri geçerli bir sayı değilse
+    if (number === "" || isNaN(number) || number === null || number.trim() === "" || Number(number) === 0) {
+        sonuc.value = "Invalid number";
+    } else {
+        sonuc.value = `Geçerli sayı: ${number}`;
+    }
+}
+
+-->
+
+    <input type="number" id="txtNumber" placeholder="Bir sayi giriniz" oninput="calculate()">
+
+    <h3 id="lblResult">Result:</h3>
+
+    <script>
+
+        //Asal sayi 1 ve sadece kendisine bölünebilen sayidir
+        //2 çift olan tek asal sayidir
+
+    function calculate(){
+
+        const txtNumber = document.querySelector("#txtNumber");
+        const sonuc = document.querySelector("#txtResult");
+
+        const number = txtNumber.value;
+
+        lblResult.innerHTML = ""; //textboxa girilen yeri temizlemek için
+
+        if(!number){
+            lblResult.innerHTML = "Invalid number";
+            return;
+        }
+
+        //7-->2-3-4-5-6
+        //11-->2-3-4-5-6-7-8-9-10
+
+        for(let i=2; i<num; i++){
+            if(number%i===0){
+                lblResult.innerHTML = `${number} is not a prime number`
+            }
+        }
+
+        lblResult.innerHTML = `${number} is a prime number`
+
+
+
+        
+
+         
+
+       
+    }
+
+    </script>
+</body>
+</html>
