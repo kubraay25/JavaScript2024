@@ -18,25 +18,37 @@
     -->
 
     <script>
-      //sadece aşağıdaki fonksiyon yazıldığında browser açıldığında çalışmaz
-
+    //Bir function oluşturuyorum
       function getAge(simdikiYasi) {
         const guncelYil = 2024;
         const age = guncelYil - simdikiYasi;
         alert(age);
       }
 
-      //ama eğer ben aşağıdaki gibi fonksiyonu çağırırsam alert mesajı anında çalışr
+      //alert mesajimin çalışmasi için aşağıdaki gigi çağırıp yukardaki fonksiyonumun çalışmasını sağlıyorum
       getAge(2012);
 
-      //yukardaki kodu şu şekilde daha dinamik yazabiliriz
+      //yukardaki fonksiyonun daha dinamik hali
       function getAge(dogumTarihi) {
         const guncelYil = new Date().getFullYear(); // Dinamik yıl
         const age = guncelYil - dogumTarihi;
         alert(age);
       }
 
-      getAge(2021);
+      //yukardaki fonksiyonun en dinamik hali
+      function getAge(dogumTarihi) {
+        const guncelYil = new Date().getFullYear(); // Dinamik yıl
+        const age = guncelYil - dogumTarihi;
+        return age;
+      }
+
+      /*
+      NOT:fonksiyon içinde istediğiniz sonucu farklı durumlara göre dışarı verebilirsiniz.
+      bunun için "return" kullanırız
+      bir değer döndüreceği anlamına gelir
+      ve fonksiyonun sonlandığı anlamına gelir
+      değeri istediğimiz yerde istediğimiz şekilde kullanabiliriz
+      /*
     </script>
   </body>
 </html>
