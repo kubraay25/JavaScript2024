@@ -9,6 +9,39 @@
     <!--
     EXAMPLE:Bir sayinin asal olup olmadığını bulan bir fonksiyon yazınız
     -->
-    <script></script>
+
+    <!--
+    <label> etiketi, kullanıcıya giriş yapması beklenen bir input alanını açıklamak için kullanılan bir HTML etiketidir. 
+      label etiketleri, özellikle form elemanlarıyla birlikte kullanılır ve genellikle bir input, textarea, select gibi 
+      kullanıcıdan bilgi girişi bekleyen elementlerle ilişkilendirilir. Kullanıcıya, hangi bilgiyi girmesi gerektiğini 
+      açıkça göstermek için kullanılır.
+      -->
+
+    <h2>Asal Sayi Kontrolü</h2>
+
+    <label for="numberInput">Sayi Giriniz</label>
+
+    <input type="number" id="txtNumber" placeholder="sayi giriniz" />
+    
+    <button id="checkButton">Asal mı?</button>
+
+    <button></button>
+    <script>
+
+      //Asal sayi kontrol fonksiyonu olusturuyorum
+      
+      function isPrime(number){
+        
+        //Geçersiz değerleri kontrol et
+        if(number===null || number===undefined || number==="" || isNaN(number) || typeof number==="boolean"){
+
+          return "invalid";
+
+        }
+
+      }
+
+      //Geçersiz değerleri kontrol et
+    </script>
   </body>
 </html>
