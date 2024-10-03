@@ -41,6 +41,7 @@
         ) {
           return "invalid";
         }
+
         //sayıyı tam sayı olarak kontrol et
         number = parseInt(number);
 
@@ -50,7 +51,7 @@
         }
 
         //asal sayı kontrolu
-        for (let i = 2; i <= Math.sqrt(number); i++) {
+        for (let i = 2; i <= Math.sqrt(number); i++) { //sayının karekökü alını karekökü olan sayinin bölenleri kontrol edilir
           if (number % i === 0) {
             return false;
           }
@@ -58,33 +59,26 @@
         return true;
       }
 
-        //buton ve input elemanlarını seçelim
-        const numberInput = document.querySelector("#numberInput")
-        const checkButton = document.querySelector("#checkButton")
+      //buton ve input elemanlarını seçelim
+      const numberInput = document.querySelector("#numberInput");
+      const checkButton = document.querySelector("#checkButton");
 
-        //button tıklama olayını dinleyelim
-        checkButton.addEventListener("click",()=>{
-          const inputValue = numberInput.value;
+      //button tıklama olayını dinleyelim
+      checkButton.addEventListener("click", () => {
+        const inputValue = numberInput.value;
 
-          //fonksiyonu çağır ve sonucu al
-          const result = isPrime(inputValue);
+        //fonksiyonu çağır ve sonucu al
+        const result = isPrime(inputValue);
 
-          //sonucları kullaniciya göster
-          if(result === "invalid"){
-
-            alert("Geçersiz bir değer girdiniz. Lütfen geçerli bir sayı giriniz")
-
-          }else if(result === false){
-
-          alert(`${inputValue} asal sayı değildir.`)
-
-          }else{
-
-            alert(`${inputValue} asal sayıdır`)
-          }
-
-        })
-      
+        //sonucları kullaniciya göster
+        if (result === "invalid") {
+          alert("Geçersiz bir değer girdiniz. Lütfen geçerli bir sayı giriniz");
+        } else if (result === false) {
+          alert(`${inputValue} asal sayı değildir.`);
+        } else {
+          alert(`${inputValue} asal sayıdır`);
+        }
+      });
 
       //Geçersiz değerleri kontrol et
     </script>
