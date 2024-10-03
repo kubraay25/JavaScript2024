@@ -21,25 +21,70 @@
 
     <label for="numberInput">Sayi Giriniz</label>
 
-    <input type="number" id="txtNumber" placeholder="sayi giriniz" />
-    
+    <input type="text" id="numberInput" placeholder="sayi giriniz" />
+
     <button id="checkButton">Asal mı?</button>
 
     <button></button>
     <script>
-
       //Asal sayi kontrol fonksiyonu olusturuyorum
-      
-      function isPrime(number){
-        
+
+      function isPrime(number) {
         //Geçersiz değerleri kontrol et
-        if(number===null || number===undefined || number==="" || isNaN(number) || typeof number==="boolean"){
 
+        if (
+          number === null ||
+          number === undefined ||
+          number === "" ||
+          isNaN(number) ||
+          typeof number === "boolean"
+        ) {
           return "invalid";
+        }
+        //sayıyı tam sayı olarak kontrol et
+        number = parseInt(number);
 
+        //2'den küçük sayılar asal değildir
+        if (number < 2) {
+          return false;
         }
 
+        //asal sayı kontrolu
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false;
+          }
+        }
+        return true;
       }
+
+        //buton ve input elemanlarını seçelim
+        const numberInput = document.querySelector("#numberInput")
+        const checkButton = document.querySelector("#checkButton")
+
+        //button tıklama olayını dinleyelim
+        checkButton.addEventListener("click",()=>{
+          const inputValue = numberInput.value;
+
+          //fonksiyonu çağır ve sonucu al
+          const result = isPrime(inputValue);
+
+          //sonucları kullaniciya göster
+          if(result === "invalid"){
+
+            alert("Geçersiz bir değer girdiniz. Lütfen geçerli bir sayı giriniz")
+
+          }else if(result === false){
+
+          alert(`${inputValue} asal sayı değildir.`)
+
+          }else{
+
+            alert(`${inputValue} asal sayıdır`)
+          }
+
+        })
+      
 
       //Geçersiz değerleri kontrol et
     </script>
