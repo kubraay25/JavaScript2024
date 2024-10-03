@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:Bir sayının palindrome olup olmadığını bulan program yazınız
+    verilen sayının tersten yazıldığında da aynı olup olmadığını kontrol eden bir program yazmak anlamına gelir.
+    12221-> palindrome
+    4556-> palindrome değil
+    -->
+
+    <!--
+    AÇIKLAMAAAAAAAAAAAA:
+
+    Kod:let reversedNumber = number.split('').reverse().join('');
+
+
+
+    number.split(''):number burada bir dize (string) olarak kabul edilir.
+                     split('') metodu, bir dizeyi her bir karakteri tek tek ele alacak şekilde bir diziye (array) dönüştürür.
+                    split('') içinde tırnak işaretleri ('') boş olduğu için, dizedeki her karakter bir liste elemanı olarak alınır.
+
+                    Örnek:let number = "1234";   // Başlangıç dizesi: "1234"
+                          let splitNumber = number.split('');  // Sonuç: ['1', '2', '3', '4']
+
+
+    reverse():Bu aşamada, elde edilen dizi (['1', '2', '3', '4']) üzerinde reverse() metodu kullanılır.
+              reverse() metodu, diziyi tersine çevirir.
+
+              Örnek:let reversedArray = splitNumber.reverse();  // Sonuç: ['4', '3', '2', '1']
+
+
+    join(''):join('') metodu, ters çevrilmiş dizi elemanlarını tekrar birleştirerek tek bir dize (string) oluşturur.
+             join('') ifadesindeki tırnak işaretlerinin ('') içi boş olduğundan, 
+             karakterler arasına herhangi bir ayırıcı eklenmez (boşluksuz birleştirilir).
+
+             Örnek:let reversedNumber = reversedArray.join('');  // Sonuç: "4321"
+
+
+
+Sonuç:Başlangıçta number değişkeni "1234" olarak kabul edilirse, reversedNumber değişkeni "4321" olarak dönecektir.
+-->
+
+
+
+
+
+    <h2>Palindrom sayısı</h2>
+
+    <!--kullanicidan sayi girmek için input alani-->
+    <input type="text" id="numberInput" placeholder="bir sayı girin" />
+
+    <!--kontrol etmek için button-->
+    <button onclick="checkPalindrom()">Kontrol Et</button>
+
+    <!--sonucu göstermek için div-->
+ 
+    <div id="result"></div>
+
+    <script>
+      function checkPalindrom() {
+        //kullanicidan sayiyi al
+        const number = document.querySelector("#numberInput").value;
+
+        //sayinin tersini al
+        let reversedNumber = number.split("").reverse().join("");
+
+        //sonucu kontrol et ve ekrana yazdır
+        if(number===reversedNumber){
+            document.getElementById("result").innerText = number + " " + "bir palindrom sayısıdır"
+        }else{
+            document.getElementById("result").innerText = number + " " + "bir palindrom sayısı değildir"
+        }
+      }
+    </script>
+  </body>
+</html>
