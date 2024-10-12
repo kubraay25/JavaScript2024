@@ -67,13 +67,12 @@
         //Kullanıcıya oyunun başladığını bildiriyoruz
         document.getElementById("result").innerText =
           "🏆🏆🏆🏆Oyuna başlandı! Tahmin yapınız🏆🏆🏆🏆";
-      };
+        };
 
-      //2.TAHMİN ET FONKSİYONUNU YAPACAĞIZ
-      const guessNumber = () => {
+        //2.TAHMİN ET FONKSİYONUNU YAPACAĞIZ
+        const guessNumber = () => {
         //kullanıcının girdiği tahmini alıyoruz
         let userGuess = parseInt(document.getElementById("txtGuess").value);
-
 
         //eğer kullanıcı bir sayı girmediyse uyarı veriyoruz
         if (isNaN(userGuess)) {
