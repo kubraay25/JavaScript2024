@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <!--
+    Scope: değişken sabitlerin yaşam alanına scope denir
+
+    FUNCTION SCOPE: Fonksiyon içinde tanımlanan değişkenler sadece fonksiyon içinde geçerlidir
+
+    GLOBAL SCOPE: Her yerden erişilebilen değişkenler en tepede tanımlanır
+
+    BLOCK SCOPE: Sadece tanımlandığı blok içinde (if, for, while....) geçerlidir
+
+    //Bir değişkeni fonksiyon içerisinde oluşturduysak ancak fonksiyon içerisinden çağırmamız gerekir 
+    //Bir değişkeni fonksiyon dışında tanımladıysak hem fonksiyon içerisinde hem de farklı kodlarda kullanabiliriz
+    //Hem global hem de function scope da aynı isimde değişken tanımlandığında bunları farklı değişkenler olarak algılar
+
+    -->
+    <script>
+      let globalScopeVariable = 21;
+
+      const myFunction = () => {
+        let functionScopeVariable = 33;
+
+        if (functionScopeVariable > 0) {
+          let blockScopeVariable = 50;
+          blockScopeVariable += globalScopeVariable;
+          console.log(blockScopeVariable);
+        }
+        //console.log(blockScopeVariable); //burada "blockScopeVariable is not defined at function" hatası verir
+      };
+
+      myFunction();
+    </script>
+  </body>
+</html>
