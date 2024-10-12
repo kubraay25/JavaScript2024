@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arrow Function</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!--
     Arrow function => Expression yönteminin biraz daha sade halidir
 
@@ -22,23 +21,25 @@
     let yas = yasHesapla(2000);
     -->
 
+    <!--
+    NOT:return kullanılırsa: Fonksiyon sonlanır ve bir değer döndürebilir.
+    return kullanılmazsa: Fonksiyon çalışır ama dışarıya sonuç döndürmez, varsayılan olarak None döndürür.
+    -->
 
     <script>
+      function sum(a, b) {
+        return a + b;
+      }
 
-       
-        function sum(a,b){
-            return a+b;
-        }
+      //Arrow function da fonksiyon içerisinde tek satır varsa süslü parantez ve return kullanmaya gerek kalmaz
+      const summm = (a, b) => a + b;
+      summm(1245, 23);
 
-         //Arrow function da fonksiyon içerisinde tek satır varsa süslü parantez ve return kullanmaya gerek kalmaz
-        const summm = (a,b) => a+b;    
-        summm(1245,23);
-
-        //Birden fazla satır olursa, süslü parantez ve return kullanılır
-        const multiply = (a,b) => {
-            console.log(a);
-            return a*b;
-        } 
+      //Birden fazla satır olursa, süslü parantez ve return kullanılır
+      const multiply = (a, b) => {
+        console.log(a);
+        return a * b;
+      };
     </script>
-</body>
+  </body>
 </html>
