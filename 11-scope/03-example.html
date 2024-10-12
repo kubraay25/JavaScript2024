@@ -1,17 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scope Example</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--
     EXAMPLE: <<Oyuna Başla>> butonuna basıldığında 1-100 arasında rastgele sayı tutulsun.
     Textbox içine tahmini sayı girilip <<tahmin et>> butonuna basıldığında tutulan sayıyla
     girilen sayıyı kontrol edip doğru tahmin olup olmadığını ve büyüklük küçüklük durumunu
     gösteren programı yapınız
+
+    ipucu: let sayi = Math.floor(Math.random()*(max-min+1)) + min
     -->
-    
-</body>
+
+    <!--
+    AÇIKLAMA
+
+    Bu JavaScript kodu, 1 ile 100 arasında rastgele bir tam sayı üretir. 
+    Kodu adım adım açıklayalım:
+
+    Math.random(): Bu fonksiyon 0 ile 1 arasında (1 hariç) rastgele bir ondalık sayı üretir. 
+    Örneğin, 0.345 veya 0.987 gibi değerler döndürebilir.
+
+    Math.random()*100: Üretilen rastgele ondalık sayıyı 100 ile çarpar. 
+    Bu, 0 ile 100 arasında bir sayı üretir. Ancak bu hala ondalıklı olabilir (örneğin, 0.345 * 100 = 34.5).
+
+    Math.floor(): Bu fonksiyon, ondalık kısmı atarak sayıyı aşağıya yuvarlar. 
+    Örneğin, 34.5 sayısını 34 yapar. Yani, bu adımda 0 ile 99 arasında bir tam sayı elde ederiz.
+
+    +1: Sonuç olarak üretilen tam sayıya 1 eklenir, böylece 1 ile 100 arasında bir tam sayı elde edilir.
+
+    Sonuç: Kod her çalıştırıldığında, 1 ile 100 arasında (her iki sınır dahil) rastgele bir tam sayı üretir ve bunu randomNumber değişkenine atar.-->
+
+    <h1>Tahmin Oyunu</h1>
+
+    <!--Oyuna başla butonu koyalım-->
+    <button id="btnStart" onclick="startGame()">Oyuna Başla</button>
+
+    <!--Tahmin edilecek sayıyı girme-->
+    <input type="number" id="txtGuess" placeholder="Tahmininizi giriniz" />
+
+    <!--Tahmin et butonu hazırla-->
+    <button id="btnGuess" onclick="guessNumber()" disabled>Tahmin Ets</button>
+
+    <script>
+      //rastgele tutulan sayıyı saklamak için variable oluşturuyorum
+      let randomNumber;
+
+      //1.OYUNA BAŞLAMA FONKSİYONU
+      const startGame(){
+          //1-100 arasında rastgele sayıyı tutuyoruz
+          randomNumber = Math.floor(Math.random()*100)+1;
+      }
+    </script>
+  </body>
 </html>
