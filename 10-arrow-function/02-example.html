@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EXAMPLE</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--
-    EXAMPLE: Ürün fiyatı, kdv oranı ve indirim oranı parametre olarak alıp son fiyatı hesaplayan fonksiyonu arrow function ile yazınız. 
-    ürün fiyatı hesaplayan fonksiyonu arrow function ile yazınız. ürün fiyatı 1500 üzerinde ise extra 10% indirim uygulanacaktır. İndirim 
+    EXAMPLE: Ürün fiyatı, kdv oranı ve indirim oranı parametre olarak alıp son 
+    fiyatı hesaplayan fonksiyonu arrow function ile yazınız. 
+    ürün fiyatı hesaplayan fonksiyonu arrow function ile yazınız. 
+    ürün fiyatı 1500 üzerinde ise extra 10% indirim uygulanacaktır. İndirim 
     uygulanmış ise kdv hesaba katılmayacaktır
     -->
 
-    <input type="number" id="txtPrice" placeholder="Product price">
-    <input type="number" id="txtTax" placeholder="Tax">
-    <input type="number" id="txtDiscountRate" placeholder="Discount rate">
+    <input type="number" id="txtPrice" placeholder="Product price" />
+    <input type="number" id="txtTax" placeholder="Tax" />
+    <input type="number" id="txtDiscountRate" placeholder="Discount rate" />
 
-    <button onclick="">Get Price</button>
-</body>
+    <button onclick="calculatePrice()">Get Price</button>
+
+    <!-- sonucu göstereceğimiz yer -->
+    <p id="result"></p>
+
+    <script>
+      //fiyatı hesaplayan arrow function
+
+      const calculatePrice = () => {
+        //inputlardan değerleri alıyoruz
+
+        let price = parseFloat(document.getElementById("txtPrice").value);
+        let taxRate = parseFloat(document.getElementById("txtTax").value);
+        let discountRate = parseFloat(
+          document.getElementById("txtDiscountRate").value
+        );
+
+        //eğer ürün fiyatı 1500'üzün üzerindeyse extra %10 indirim uygulanıyor
+
+        if (price > 1500) {
+          discountRate += 10; //extra %10 indirim
+        }
+
+        //indirim oranını uygulayarak indirimli fiyatı hesaplıyoruz
+        let discountedPrice = price - (price * discountRate/100);
+
+        //eğer indirim uygulanmışsa KDV hesaba katılmayacak
+        let finalPrice;
+        if(discountRate > 0){
+            finalPrice = discountedPrice; //indirim varsa KDV eklenmiyor
+
+        }else{
+            finalPrice = discountedPrice + (discountedPrice*taxRate/100); //indirim yoksa KDV ekleniyor
+        }
+
+        //sonucu ekrana yazdırıyoruz
+        document.getElementById('result').innerText = `Final Price: ${finalPrice.toFixed(2)} TL`;
+    }
+    </script>
+  </body>
 </html>
