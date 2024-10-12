@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handle Example</title>
+  </head>
+  <body>
+    <button id="btnSayHello1" onclick="sayHello1()">Say Hello 1</button>
+    <button id="btnSayHello2">Say Hello 2</button>
+    <button id="btnSayHello3">Say Hello 3</button>
+    <script>
+        //1.Durum yukardaki button tagının içerisine "oncklick" methodu yerleştirilerek yapılır
+        function sayHello1(){
+            alert("Hello 1");
+        }
+
+        //2.Durum button içine değil asağıdaki gibi kullanılarak yapılır
+        const sayHello2 = () => {
+            alert("Hello2")
+        }
+
+        document.querySelector("#btnSayHello2").onclick= sayHello2;
+        //buradaki en büyük püf nokta sayHello2() parantezi koymadan yazmak
+        //parantezi koyarak yazarsak butona basmadan fonksiyon çağrılmış olur
+        //ama parantezi koymadan yazarsan ben butona tıkladığımda çalışacak
+
+
+        //3.Durum "addEventListener" methodu kullanılarak
+        document.querySelector("#btnSayHello3").addEventListener("click", ()=>{
+            alert("Hello3")
+        })
+        
+    </script>
+  </body>
+</html>
