@@ -16,7 +16,10 @@
     -->
 
     <!--
+
     AÇIKLAMA
+
+    randomNumber = Math.floor(Math.random()*100)+1;   KODUNUN AÇIKLANMASI
 
     Bu JavaScript kodu, 1 ile 100 arasında rastgele bir tam sayı üretir. 
     Kodu adım adım açıklayalım:
@@ -43,17 +46,53 @@
     <input type="number" id="txtGuess" placeholder="Tahmininizi giriniz" />
 
     <!--Tahmin et butonu hazırla-->
-    <button id="btnGuess" onclick="guessNumber()" disabled>Tahmin Ets</button>
+    <button id="btnGuess" onclick="guessNumber()" disabled>Tahmin Et</button>
+
+    <!--Sonuc gösterilecek yer-->
+    <p id="result">sonucu göster</p>
 
     <script>
       //rastgele tutulan sayıyı saklamak için variable oluşturuyorum
       let randomNumber;
 
       //1.OYUNA BAŞLAMA FONKSİYONU
-      const startGame(){
-          //1-100 arasında rastgele sayıyı tutuyoruz
-          randomNumber = Math.floor(Math.random()*100)+1;
-      }
+      const startGame = () => {
+        //1-100 arasında rastgele sayıyı tutuyoruz
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log(`Tutulan Sayi: ${randomNumber}`); //kontrol amaçlı konsola yazdırıyoruz
+
+        //Tahmin et butonunu aktifleştirelim
+        document.getElementById("btnGuess").disabled = false;
+
+        //Kullanıcıya oyunun başladığını bildiriyoruz
+        document.getElementById("result").innerText =
+          "Oyuna başlandı! Tahmin yapınız";
+      };
+
+      //2.TAHMİN ET FONKSİYONUNU YAPACAĞIZ
+      const guessNumber = () => {
+        //kullanıcının girdiği tahmini alıyoruz
+        let userGuess = parseInt(document.getElementById("txtGuess").value);
+
+        //eğer kullanıcı bir sayı girmediyse uyarı veriyoruz
+        if (isNaN(userGuess)) {
+          document.getElementById("result").innerText =
+            "Lütfen geçerli bir sayı giriniz";
+          return;
+        }
+
+        //Tahmin edilen sayı ile tutulan sayıyı karşılaştırıyoruz
+        if (userGuess === randomNumber) {
+          document.getElementById("result").innerText =
+            "Tebrikler doğru tahmin girdiniz";
+        } else if (userGuess < randomNumber) {
+          document.getElementById("result").innerText =
+            "Daha büyük bir sayi giriniz";
+        } else {
+          document.getElementById("result").innerText =
+            "Daha küçük bir sayı giriniz";
+        }
+      };
     </script>
   </body>
 </html>
