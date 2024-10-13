@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array-Example</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE: Bir dizi içindeki en büyük sayıyı bulan programı yazınız
+    -->
+
+    <button id="btnGetNum">Get Greatest Number</button>
+
+    <h4 id="lblResult">Sonucu Göster</h4>
+
+    <script>
+      const btnGetNum = document.querySelector("#btnGetNum");
+      const lblResult = document.querySelector("#lblResult");
+
+      const nums = [12, 435, 12, 1155];
+
+      btnGetNum.addEventListener("click", () => {
+        const num = getGreatestNumber(nums);
+        lblResult.innerHTML = num;
+      });
+
+      const getGreatestNumber = (arr) => {
+        if (!arr || !Array.isArray(arr) || arr.length <= 0) return;
+
+        let greatestNumber = arr[0];
+
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] > greatestNumber) {
+            greatestNumber = arr[i];
+          }
+        }
+        return greatestNumber;
+      };
+    </script>
+  </body>
+</html>

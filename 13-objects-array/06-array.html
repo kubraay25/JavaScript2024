@@ -8,7 +8,7 @@
 <body>
     <!--
     ARRAY:DİZİ
-    
+
     Diziler bir veri yapısı (data structure) olup bir veya çok daha fazla veriyi
     saklamak için kullanılırlar
 
@@ -18,5 +18,23 @@
 
     //diziler numaralandırılmaya sıfırdan 0'dan başlarlar
     -->
+    <script>
+        const cars = ["Mercedes","Audi","TOGG","BMW"];
+        cars[0];
+        console.log(cars);
+
+        //Dizinin kaç elemanlı olduğunu öğrenmek istersek
+        console.log(cars.length);
+
+        //sadece hep son elemanı almak istersek
+        console.log(cars[cars.length-1]);
+
+        //eğer elemanı değiştirmek istersek
+        cars[2] = "Citroen"
+
+        //yukarda const ile tanımladığım halde içindeki bir elemanın değerini
+        //değiştirebilirim çünkü dizinin tamamını değil sadece bir tanesinin 
+        //değerini değiştiriyorum,diziyi tamamen değiştirirsek hata alırız
+    </script>
 </body>
 </html>
