@@ -6,6 +6,38 @@
     <title>Optional Chaining</title>
 </head>
 <body>
-    
+    <!--
+    Tabii! Optional chaining, JavaScript'te bir nesnenin iç içe geçmiş (nested) yapılarına 
+    güvenli bir şekilde erişmek için kullanılan bir yöntemdir. Bu yöntem, bir nesnenin 
+    belirli bir özelliğine veya bir fonksiyonuna erişirken "undefined" veya "null" 
+    değerlerine rastladığında HATASIZ bir şekilde ilerlemeye olanak tanır.
+
+    Normalde, iç içe geçmiş nesnelere erişirken her bir adımı kontrol etmeden direkt 
+    erişmeye çalışırsak, undefined ya da null olan bir değerle karşılaşırsak bir TypeError alırız. 
+    Optional chaining bu durumu ortadan kaldırır ve eğer ara değerlerden biri undefined veya null ise 
+    işlemi kesip UNDEFINED döner.
+
+    Syntax:
+    Optional chaining ?. operatörü ile kullanılır. Bu operatör sayesinde nesnenin belirtilen 
+    özelliklerine erişmeden önce nesne var mı yok mu kontrol edilir.
+
+    const kullanici3 = {
+    isim: "Zeynep",
+    arabalar: {
+        birinciAraba: {
+            marka: "Toyota"
+        } }};
+   
+// Optional chaining kullanmadan
+console.log(kullanici3.arabalar.birinciAraba.marka); // Toyota
+// Optional chaining kullanarak
+console.log(kullanici3.arabalar?.birinciAraba?.marka); // Toyota
+
+// birinciAraba yoksa
+const kullanici4 = {
+    isim: "Ahmet"
+};
+console.log(kullanici4.arabalar?.birinciAraba?.marka); // undefined (hata almıyoruz!)
+    -->
 </body>
 </html>
