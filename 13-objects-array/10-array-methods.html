@@ -23,6 +23,10 @@
     shift() >> dizinin ilk elemanını siler
 
     unshift() >> dizinin ilk elemanını ekler
+
+    sort() >> diziyi alfabetik olarak sıralar
+
+    reverse() >> diziyi tersine çevirir
     -->
     <script>
         const cars = ["Porche","Ferrari","Bugatti","Tesla"]
@@ -46,6 +50,14 @@
 
         //dizinin ilk elemanını ekleyerek değiştirelim
         cars.unshift("Porche");
+        console.log(cars);
+
+        //dizinin elemanlarını alfabetik olarak sıralar
+        cars.sort();
+        console.log(cars);
+
+        //diziyi tersine çevirir
+        cars.reverse();
         console.log(cars);
         
     </script>
