@@ -27,6 +27,9 @@
     sort() >> diziyi alfabetik olarak sıralar
 
     reverse() >> diziyi tersine çevirir
+
+    splice(1,2,3) >>  dizide 1.elemandan başlayıp 2.ci elemana kadar silip 3'ü bunların
+    yerine ekleyeceğim methodudur.
     -->
     <script>
         const cars = ["Porche","Ferrari","Bugatti","Tesla"]
@@ -58,6 +61,12 @@
 
         //diziyi tersine çevirir
         cars.reverse();
+        console.log(cars);
+
+        //dizide istediğinden elemandan başlayarak silme yapıp yerine ekleme methodudur
+        //2.ci elemendan 4.elemanda dahil olmak üzere siler
+        //yerine "kubra" yı ekler
+        cars.splice(2,4,"kubra");
         console.log(cars);
         
     </script>
