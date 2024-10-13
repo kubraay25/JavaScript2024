@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <!--
+    NOT:Dizi elemanlarına erişmek, bunları manupüle etmek veya
+    iterasyon yapmak için çeşitli hazır methodlar bulumaktadır 
+
+    mutator() >> dizi içeriğinin değiştirilmesini sağlar
+
+    access() >> dizi elemanlarına erişmek için kullanılırlar
+
+    iterator >> dizi elemanları döngü yoluyla dolaşmak için kullanılır
+
+    push() >> dizi içerisine yeni bir eleman atar
+
+    pop() >> dizinin son elemanını siler 
+
+    shift() >> dizinin ilk elemanını siler
+
+    unshift() >> dizinin ilk elemanını ekler
+    -->
+    <script>
+        const cars = ["Porche","Ferrari","Bugatti","Tesla"]
+        console.log(cars)
+
+        //.push methodu ile diziye eleman ekleyeceğim
+        cars.push("Audi");
+        console.log(cars)
+
+        //yine push methodu ile eleman sayısıda gösterilebilir
+        const newLength = cars.push("Audi");
+        console.log(newLength); //6
+
+        //dizinin sonn elemanını silelim
+        cars.pop();
+        console.log(cars);
+
+        //dizinin ilk elemanını silelim
+        cars.shift();
+        console.log(cars);
+
+        //dizinin ilk elemanını ekleyerek değiştirelim
+        cars.unshift("Porche");
+        console.log(cars);
+        
+    </script>
+  </body>
+</html>
