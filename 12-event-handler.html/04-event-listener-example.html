@@ -24,11 +24,11 @@
     <h1>Not Hesaplama</h1>
 
     <label for="not1">Not 1:</label>
-    <input type="number" id="not1" placeholder="Not Girin" />
+    <input type="text" id="not1" placeholder="Not Girin" />
     <br /><br />
 
     <label for="not2">Not 2:</label>
-    <input type="number" id="not2" placeholder="Not Girin" />
+    <input type="text" id="not2" placeholder="Not Girin" />
     <br /><br />
 
     <button id="hesaplaButon" ">Ortalama Hesapla</button>
@@ -45,8 +45,8 @@
         let not2 = parseFloat(document.getElementById("not2").value);
 
         //Eğer değerler geçersiz ise uyarı ver
-        if (isNaN(not1) || isNaN(not2)) {
-          documnet.getElementById("sonuc").innerText =
+        if (isNaN(not1) || isNaN(not2) || not1<0 || not1>100 || not2<0 || not2>100) {
+          document.getElementById('sonuc').innerText =
             "Lütfen Geçerli Bir Sayı Giriniz";
           return;
         }
