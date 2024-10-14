@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example:</title>
+</head>
+<body>
+    <!--
+    EXAMPLE:Koordinatlar dizisindeki negatif koordinatları alıp yeni
+    bir dizide saklayan uygulamayı filter ile yapınız
+    -->
+    <script>
+        const koordinatlar = [-100,150,-32,43,-20];
+        const negatifKoordinatlar = koordinatlar.filter((x)=>x<0);
+        console.log(negatifKoordinatlar); //-100,-32,-20
+    </script>
+</body>
+</html>

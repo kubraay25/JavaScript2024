@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example</title>
+  </head>
+  <body>
+    <input type="search" id="txtSearch" placeholder="search" />
+
+    <ul id="listProduct"></ul>
+    <script>
+      const txtSearch = document.querySelector("#txtSearch");
+      const listProduct = document.querySelector("#listProduct")
+      const products = [
+        { id: 1, name: "laptop", price: 20000 },
+        { id: 2, name: "mobile", price: 250 },
+        { id: 3, name: "watch", price: 100 },
+        { id: 4, name: "headphone", price: 80 },
+        { id: 5, name: "mouse", price: 56 },
+        { id: 6, name: "keyboard", price: 456 },
+        { id: 7, name: "mousepad", price: 890 },
+      ];
+
+      txtSearch.addEventListener("input", (e) => {
+        //Textbox a girilen değeri al
+        const text = e.target.value;
+        const arr = filterArray(text);
+        console.log(arr);
+        fillList(arr);
+      });
+
+      const filterArray = (text) => {
+        const newProducts = products.filter((item) => item.name.includes(text));
+        return newProducts;
+      };
+
+      const fillList = (arr) => {
+        let strProducts = "";
+        arr.forEach((item) => {
+          strProducts += `<li>${item.name}</li>`;
+        });
+        listProduct.innerHTML = strProducts;
+      };
+    </script>
+  </body>
+</html>
