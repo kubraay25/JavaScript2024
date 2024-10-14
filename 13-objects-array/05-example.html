@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects Method</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects Method Example</title>
+  </head>
+  <body>
     <!--
     EXAMPLE: Bir object içinde key'e göre arama yapıp
     value döndüren uygulamayı yapınız
+    brand,model,color,year,doors alt alta butonları olsun scroll olsun bunlardan 
+    hangisine tıklarsam bana o özelliği sunsun
     -->
-</body>
+    <div>
+      <select id="listCar" size="9" style="width: 300px"></select>
+    </div>
+
+    <h3 id="lblValue">değerler</h3>
+    <script>
+      const car = {
+        brand: "Audi",
+        model: "A4",
+        color: "red",
+        year: 2023,
+        doors: 5,
+        seats: 5,
+        engine: "v8",
+        transmission: "Automatic",
+        price: 5000,
+      };
+  
+      //öncelikle listeyi doldurma aşamasından başlayalım
+      //optionsları yukarda manuelde oluşturabilirdik ama biz otomatik oluşturduk
+      //<option> tagını ekleyerek yaptık
+      const fillList = () => {
+        const carKeys = Object.keys(car);
+
+        //optionsları tek tek yerleştireceğiz
+        let options = "";
+        for (let i = 0; i < carKeys.length; i++) {
+          options += `<option>${carKeys[i]}</optipns>`;
+        }
+        console.log(options);
+
+        //optionsları tek tek yazdıracağız
+        const listCar = document.querySelector("#listCar");
+        listCar.innerHTML = options;
+      };
+      fillList();
+    </script>
+  </body>
 </html>

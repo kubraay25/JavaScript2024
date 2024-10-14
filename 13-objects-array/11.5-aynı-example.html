@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    EXAMPLE: Bir textbox oluşturunuz
+    Add,Sort,Reverse,Remove Last,Remove First,Remove All,Mix 
+    butonlarınıda ekleyin
+    Ankara,İzmir,İstanbul dizi elemanlarıdır  bu button 
+    isimleri aynı zamanda method isimleridir yani bu buthonlara 
+    bastığımda bu işlevleri yerine getirecekler.
+    -->
+    <input type="text" id="textbox" placeholder="Eleman Ekleyin" />
+
+    <br /><br />
+
+    <!-- Butonlar - onclick doğrudan kullanılmıyor -->
+    <button id="addBtn">Add</button>
+    <button id="sortBtn">Sort</button>
+    <button id="reverseBtn">Reverse</button>
+    <button id="removeLastBtn">Remove Last</button>
+    <button id="removeFirstBtn">Remove First</button>
+    <button id="removeAllBtn">Remove All</button>
+    <button id="mixBtn">Mix</button>
+
+    <h2>Sonuçları Göster</h2>
+    <ul id="arrayDisplay"></ul>
+
+    <script>
+      // Mevcut dizi
+      let cities = ["Ankara", "İzmir", "İstanbul"];
+
+      // Diziyi güncelleyen fonksiyon
+      const updateDisplay = () => {
+        const display = document.getElementById("arrayDisplay");
+        display.innerHTML = ""; // Önce listeyi temizle
+
+        cities.forEach((city) => {
+          const li = document.createElement("li");
+          li.textContent = city;
+          display.appendChild(li);
+        });
+      };
+
+      // Add
+      const add = () => {
+        const input = document.getElementById("textbox").value;
+        if (input) {
+          cities.push(input);
+          updateDisplay();
+        }
+        document.getElementById("textbox").value = ""; // Metin kutusunu temizle
+      };
+
+      // Sort
+      const sort = () => {
+        cities.sort();
+        updateDisplay();
+      };
+
+      // Reverse
+      const reverse = () => {
+        cities.reverse();
+        updateDisplay();
+      };
+
+      // Remove Last
+      const removeLast = () => {
+        cities.pop();
+        updateDisplay();
+      };
+
+      // Remove First
+      const removeFirst = () => {
+        cities.shift();
+        updateDisplay();
+      };
+
+      // Remove All
+      const removeAll = () => {
+        cities.length = 0;
+        updateDisplay();
+      };
+
+      // Mix
+      const mix = () => {
+        cities = cities.sort(() => Math.random() - 0.5);
+        updateDisplay();
+      };
+
+      // Arrow function ile olay dinleyicileri ekleyelim
+      document.getElementById("addBtn").addEventListener("click", () => add());
+      document.getElementById("sortBtn").addEventListener("click", () => sort());
+      document.getElementById("reverseBtn").addEventListener("click", () => reverse());
+      document.getElementById("removeLastBtn").addEventListener("click", () => removeLast());
+      document.getElementById("removeFirstBtn").addEventListener("click", () => removeFirst());
+      document.getElementById("removeAllBtn").addEventListener("click", () => removeAll());
+      document.getElementById("mixBtn").addEventListener("click", () => mix());
+
+      // Sayfa ilk açıldığında dizi görüntülensin
+      updateDisplay();
+    </script>
+  </body>
+</html>
