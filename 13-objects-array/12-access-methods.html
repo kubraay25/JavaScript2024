@@ -13,7 +13,11 @@
 
     includes("d") >> içeriyor mu diye sorar
 
-    indexOf() >> bir elemanın index numarasını verir, bulamadığı elemanda -1 verir sonucu
+    indexOf() >> bulduğu ilk elemanın index numarasını verir, bulamadığı elemanda -1 verir sonucu
+    
+    lastIndexOf() >> bulduğu son elemanın index numarasını verir
+
+    join() >> bir diziyi metin haline döndürür. Stringe döndürür
     -->
     <script>
         const cars1 = ["Porche","BMV","Ferrari"];
@@ -30,6 +34,17 @@
         //indexOf()
         console.log(arr1.indexOf("Porche")); //0
         console.log(arr1.indexOf("Mercedes")); //-1
+
+        //lastIndexOf()
+        console.log(arr1.lastIndexOf("Dacca")); //4
+
+        //join()
+        console.log(arr1.join()); //Porche,BMV,Ferrari,Citroen,Dacca,Şahin
+        console.log(arr1.join("/")); //Porche/BMV/Ferrari/Citroen/Dacca/Şahin
+        console.log(arr1.join("-")); //Porche-BMV-Ferrari-Citroen-Dacca-Şahin
+        console.log(arr1.join("")); //PorcheBMVFerrariCitroenDaccaŞahin
+
+
 
     </script>
   </body>
