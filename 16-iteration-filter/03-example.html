@@ -1,17 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>               <!--bu tarayıcıya bir HTML5 dökümanı açtığınızı bildirir-->
+<html lang="en">              <!--sayfanın dilini ingilizce olarak belirler-->
+  <head>                      <!--burada meta bilgileri yer alır-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Example</title>
   </head>
   <body>
+    <!--
+    Example:Bir ürün listesini arama kutusuna girilen harfe göre filtrele ve ekrana yazdır
+    -->
+    <!--
+     Arama kutusuna girilen metin alınır.
+     Ürün listesi bu metne göre filtrelenir.
+     Filtrelenmiş ürünler bir liste halinde sayfada görüntülenir.
+     Bu kodun amacı, kullanıcının aradığı ürünlere anında ulaşabilmesini sağlamaktır. 
+     Filtreleme işlemi, her yeni harf girildiğinde yeniden yapılır, bu da hızlı bir kullanıcı deneyimi sunar.
+     -->
+
+
     <input type="search" id="txtSearch" placeholder="search" />
 
     <ul id="listProduct"></ul>
     <script>
+
       const txtSearch = document.querySelector("#txtSearch");
       const listProduct = document.querySelector("#listProduct")
+
       const products = [
         { id: 1, name: "laptop", price: 20000 },
         { id: 2, name: "mobile", price: 250 },
@@ -24,17 +38,19 @@
 
       txtSearch.addEventListener("input", (e) => {
         //Textbox a girilen değeri al
-        const text = e.target.value;
+        const text = e.target.value;      
         const arr = filterArray(text);
         console.log(arr);
         fillList(arr);
       });
 
+      //arama kutusuna girilen metni(texti) alir ve ürün listesini filtreler
       const filterArray = (text) => {
         const newProducts = products.filter((item) => item.name.includes(text));
-        return newProducts;
+        return newProducts; //filtrelenmiş ürünler geri döndürülür
       };
 
+      //bu fonksiyon arama sonuçlarını ekranda görüntüler
       const fillList = (arr) => {
         let strProducts = "";
         arr.forEach((item) => {
