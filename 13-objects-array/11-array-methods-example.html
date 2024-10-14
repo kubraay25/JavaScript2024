@@ -12,16 +12,16 @@
     Ankara,İzmir,İstanbul dizi elemanlarıdır
     -->
 
-    <input type="text" id="textBox" placeholder="Eleman Ekleyin" />
+    <input type="text" id="textbox" placeholder="Eleman Ekleyin" />
 
     <br />
     <br />
 
-    <button onclick="Add()">Add</button>
+    <button onclick="add()">Add</button>
 
-    <button onclick="Sort()">Sort</button>
+    <button onclick="sort()">Sort</button>
 
-    <button onclick="Reserve()">Reserve</button>
+    <button onclick="reserve()">Reserve</button>
 
     <button onclick="removeLast()">Remove Last</button>
 
@@ -36,23 +36,66 @@
     <ul id="arrayDisplay"></ul>
 
     <script>
+      //en baştaki mevcut dizi listemiz
+      const cities = ["Ankara", "İstanbul", "İzmir"];
 
-        //en baştaki mevcut dizi listemiz
-        const cities = ["Ankara","İstanbul","İzmir"]
+      //diziyi güncelleyen fonksiyon yazalım
+      function updateDisplay() {
+        let display = document.getElementById("arrayDisplay");
+        display.innerText = ""; //önce temizle
 
-        //diziyi güncelleyen fonksiyon yazalım
-        function updateDisplay(){
-            const display = document.getElementById("arrayDisplay");
-            display.innerText = ""; //önce temizle
+        cities.forEach((city) => {
+          const li = document.createElement("li");
+          li.textContent = city;
+          display.appendChild(li);
+        });
+      }
 
-            cities.forEach(city =>{
-                const li = document.createElement("li");
-                li.textContent = city;
-                display.appendChild(li);
-            });
+      //Add butonu
+      function add() {
+        const input = document.getElementById("textbox").value;
+        if (input) {
+          cities.push(input);
+          updateDisplay();
         }
+        document.getElementById("textbox").value ="";//metin kutusunu temizle
+      }
 
+      //Sort butonu
+      function sort(){
+        cities.sort();
+        updateDisplay();
+      }
 
+      //Reserve butonu
+      function reserve(){
+        cities.reverse();
+        updateDisplay();
+      }
+
+      //Remove Last 
+      function removeLast(){
+        cities.pop();
+        updateDisplay();
+      }
+
+      //Remove First 
+      function removeFirst(){
+        cities.shift();
+        updateDisplay();
+      }
+
+      //Remove All
+      function removeAll(){
+        cities.length = 0;
+        updateDisplay();
+      }
+
+      //Mix
+      function mix(){
+        cities = cities.sort(()=> Math.random()-0.5);
+        updateDisplay();
+      }
     </script>
   </body>
 </html>
