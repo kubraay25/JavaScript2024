@@ -21,7 +21,7 @@
 
     toString() >> bir diziyi sadece stringe çevirir
 
-    slice(0,2) >> parçalara ayırır
+    slice(0,2) >> parçalara ayırır, "0" dhil ama "2" dahil değil
     -->
     <script>
       const cars1 = ["Porche", "BMV", "Ferrari"];
@@ -53,6 +53,12 @@
 
       //slice()
       console.log(cars1.slice(0, 3)); //(3) ['Porche', 'BMV', 'Ferrari']
+
+      const harfler = ['a','b','c'];
+      const rakamlar = [1,2,3,];
+
+      const birleşik = harfler.concat(rakamlar,4,[5,6]);
+      console.log(birleşik);
     </script>
   </body>
 </html>
