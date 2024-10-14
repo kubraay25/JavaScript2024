@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-Example</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:Belirtilen dizinin her bir elemanının 5 katını alarak ayrı bir dizide 
+    saklayan uygulamayı forEach kullanarak yapınız
+    -->
+    <script>
+      const dizi = [-5, 24, -13, 7];
+      const yeniDizi = [];
+
+      dizi.forEach((item, index) => {
+        yeniDizi[index] = item * 5;
+      });
+      console.log(yeniDizi);
+    </script>
+  </body>
+</html>
