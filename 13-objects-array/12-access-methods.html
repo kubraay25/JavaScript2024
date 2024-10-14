@@ -17,35 +17,42 @@
     
     lastIndexOf() >> bulduğu son elemanın index numarasını verir
 
-    join() >> bir diziyi metin haline döndürür. Stringe döndürür
+    join() >> bir diziyi metin haline döndürür(şeklini biz verebilirizz). Stringe döndürür
+
+    toString() >> bir diziyi sadece stringe çevirir
+
+    slice(0,2) >> parçalara ayırır
     -->
     <script>
-        const cars1 = ["Porche","BMV","Ferrari"];
-        const cars2 = ["Citroen","Dacca","Şahin"];
+      const cars1 = ["Porche", "BMV", "Ferrari"];
+      const cars2 = ["Citroen", "Dacca", "Şahin"];
 
-        //concat() methodu dizilere ekleme yapar
-        const arr1 = cars1.concat(cars2);
-        console.log(arr1);
+      //concat() methodu dizilere ekleme yapar
+      const arr1 = cars1.concat(cars2);
+      console.log(arr1);
 
-        //includes() methodu içeriyor mu diye sorar
-        console.log(arr1.includes("Porche")); //true
-        console.log(arr1.includes("bugatti")); //false
+      //includes() methodu içeriyor mu diye sorar
+      console.log(arr1.includes("Porche")); //true
+      console.log(arr1.includes("bugatti")); //false
 
-        //indexOf()
-        console.log(arr1.indexOf("Porche")); //0
-        console.log(arr1.indexOf("Mercedes")); //-1
+      //indexOf()
+      console.log(arr1.indexOf("Porche")); //0
+      console.log(arr1.indexOf("Mercedes")); //-1
 
-        //lastIndexOf()
-        console.log(arr1.lastIndexOf("Dacca")); //4
+      //lastIndexOf()
+      console.log(arr1.lastIndexOf("Dacca")); //4
 
-        //join()
-        console.log(arr1.join()); //Porche,BMV,Ferrari,Citroen,Dacca,Şahin
-        console.log(arr1.join("/")); //Porche/BMV/Ferrari/Citroen/Dacca/Şahin
-        console.log(arr1.join("-")); //Porche-BMV-Ferrari-Citroen-Dacca-Şahin
-        console.log(arr1.join("")); //PorcheBMVFerrariCitroenDaccaŞahin
+      //join()
+      console.log(arr1.join()); //Porche,BMV,Ferrari,Citroen,Dacca,Şahin
+      console.log(arr1.join("/")); //Porche/BMV/Ferrari/Citroen/Dacca/Şahin
+      console.log(arr1.join("-")); //Porche-BMV-Ferrari-Citroen-Dacca-Şahin
+      console.log(arr1.join("")); //PorcheBMVFerrariCitroenDaccaŞahin
 
+      //toString()
+      console.log(arr1.toString(cars1)); //Porche,BMV,Ferrari,Citroen,Dacca,Şahin
 
-
+      //slice()
+      console.log(cars1.slice(0, 3)); //(3) ['Porche', 'BMV', 'Ferrari']
     </script>
   </body>
 </html>
