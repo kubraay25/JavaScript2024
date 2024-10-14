@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    EXAMPLE:Tl fiyatlar dizisindeki ürünlere fiyatı 100 TL den fazla
+    olanlara %10 zam, 100 Tl den az olanlara ise %15 zam yapılmak isteniyor.
+    ayrıca zamlı olan yeni değerler yeni bir dizide saklanmak istiyor
+    bunu yapınız
+    -->
+</body>
+<script>
+    const products = [
+        {id:1,name:"laptop",price:20000},
+        {id:2,name:"mobile",price:250},
+        {id:3,name:"watch",price:100},
+        {id:4,name:"headphone",price:80},
+        {id:5,name:"mouse",price:56},
+        {id:6,name:"keyboard",price:456},
+        {id:7,name:"mousepad",price:890},
+    ]
+
+    const newProducts = products.map((item)=>{
+        if(item.price>100){
+            item.price *= 1.10;
+        }else{
+            item.price *=1.15;
+        }
+        return item;
+    })
+    console.log(newProducts);
+</script>
+</html>

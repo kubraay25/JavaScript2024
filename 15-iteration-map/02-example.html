@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForEach</title>
+  </head>
+  <body>
+    <!--
+    EXAMPLE:Animal dizisinin elemanlarını büyük harfe çevirip yeni bir
+    dizide saklayın
+    -->
+    <script>
+      const animals = ["fil", "kuş", "deve", "fare", "kaplan"];
+      //console.log(animals)
+
+      const newAnimals = [];
+
+      //forEach ile bu şekilde yapılır
+      animals.forEach((item, i) => {
+        //console.log(item,i);
+        newAnimals[i] = item.toUpperCase();
+      });
+
+      //map methodu forEach'ten farklı olarak her dönüşte bir return ister
+      animals.map((item)=>item.toUpperCase());
+      console.log(animals,newAnimals);
+    </script>
+  </body>
+</html>
