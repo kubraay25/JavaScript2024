@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array-Methods-Example</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--
     EXAMPLE: Bir textbox oluşturunuz
     Add,Sort,Reverse,Remove Last,Remove First,Remove All,Mix butonlarınıda ekleyin
     Ankara,İzmir,İstanbul dizi elemanlarıdır
     -->
-</body>
+
+    <input type="text" id="textBox" placeholder="Eleman Ekleyin" />
+
+    <br />
+    <br />
+
+    <button onclick="Add()">Add</button>
+
+    <button onclick="Sort()">Sort</button>
+
+    <button onclick="Reserve()">Reserve</button>
+
+    <button onclick="removeLast()">Remove Last</button>
+
+    <button onclick="removeFirst()">Remove First</button>
+
+    <button onclick="removeAll()">Remove All</button>
+
+    <button onclick="mix()">Mix</button>
+
+    <h2>sonuçları göster</h2>
+
+    <ul id="arrayDisplay"></ul>
+
+    <script>
+
+        //en baştaki mevcut dizi listemiz
+        const cities = ["Ankara","İstanbul","İzmir"]
+
+        //diziyi güncelleyen fonksiyon yazalım
+        function updateDisplay(){
+            const display = document.getElementById("arrayDisplay");
+            display.innerText = ""; //önce temizle
+
+            cities.forEach(city =>{
+                const li = document.createElement("li");
+                li.textContent = city;
+                display.appendChild(li);
+            });
+        }
+
+
+    </script>
+  </body>
 </html>
