@@ -18,6 +18,8 @@
 
     <h3 id="lblValue">değerler</h3>
     <script>
+      const listCar = document.querySelector("#listCar");
+      const lblValue = document.querySelector("#lblValue");
       const car = {
         brand: "Audi",
         model: "A4",
@@ -29,24 +31,36 @@
         transmission: "Automatic",
         price: 5000,
       };
-  
+
       //öncelikle listeyi doldurma aşamasından başlayalım
       //optionsları yukarda manuelde oluşturabilirdik ama biz otomatik oluşturduk
       //<option> tagını ekleyerek yaptık
       const fillList = () => {
+        //objectin elemanlarını dizi haline getir
         const carKeys = Object.keys(car);
 
         //optionsları tek tek yerleştireceğiz
         let options = "";
+
+        //dizideki elemanları tek tek gez
         for (let i = 0; i < carKeys.length; i++) {
           options += `<option>${carKeys[i]}</optipns>`;
         }
         console.log(options);
 
         //optionsları tek tek yazdıracağız
-        const listCar = document.querySelector("#listCar");
+
         listCar.innerHTML = options;
       };
+
+      listCar.addEventListener("change", (e) => {
+        //aktif seçilmiş olan elementin değerini al
+        const selectedKey = e.target.value;
+
+        //bu değeri labela yerleştir
+        lblValue.innerHTML = car[selectedKey];
+      });
+
       fillList();
     </script>
   </body>
