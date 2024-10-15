@@ -32,13 +32,7 @@
       function isPrime(number) {
         //Geçersiz değerleri kontrol et
 
-        if (
-          number === null ||
-          number === undefined ||
-          number === "" ||
-          isNaN(number) ||
-          typeof number === "boolean"
-        ) {
+        if (number === null ||number === undefined || number === "" || isNaN(number) || typeof number === "boolean") {
           return "invalid";
         }
 
@@ -51,7 +45,8 @@
         }
 
         //asal sayı kontrolu
-        for (let i = 2; i <= Math.sqrt(number); i++) { //sayının karekökü alını karekökü olan sayinin bölenleri kontrol edilir
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          //sayının karekökü alını karekökü olan sayinin bölenleri kontrol edilir
           if (number % i === 0) {
             return false;
           }
